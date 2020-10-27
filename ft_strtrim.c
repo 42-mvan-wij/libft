@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_strtrim.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 17:51:10 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/27 14:23:58 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/27 11:41:25 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2020/10/27 22:12:19 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int i;
+	int	len;
+	int	i;
+	int	start;
 
+	if (s1 == NULL)
+		return (NULL);
+	len = ft_strlen(s1);
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		if (((unsigned char *)src)[i] == (unsigned char)c)
-			return (dst + i + 1);
+		if (ft_strchr(set, s1[i]) == NULL)
+			break ;
 		i++;
 	}
-	return (NULL);
+	if (i == len)
+		return (ft_calloc(1, 1));
+	start = i;
+	while (len > 0)
+	{
+		if (ft_strchr(set, s1[len - 1]) == NULL)
+			break ;
+		len--;
+	}
+	return (ft_substr(s1, start, len - start));
 }

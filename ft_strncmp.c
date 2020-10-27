@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_strncmp.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 17:51:10 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/27 14:23:58 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/27 11:01:28 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2020/10/27 15:34:48 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int i;
 
 	i = 0;
-	while (i < n)
+	while (i < n && s1[i] != '\0' && s2[i] != '\0')
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		if (((unsigned char *)src)[i] == (unsigned char)c)
-			return (dst + i + 1);
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	return (NULL);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

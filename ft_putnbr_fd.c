@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_putnbr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 17:51:10 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/27 14:23:58 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/27 12:39:22 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2020/10/27 22:22:17 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int i;
+	int tmp_n;
+	int pow;
 
-	i = 0;
-	while (i < n)
+	tmp_n = n;
+	pow = 1;
+	while (tmp_n / 10 != 0 || pow == 1)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		if (((unsigned char *)src)[i] == (unsigned char)c)
-			return (dst + i + 1);
-		i++;
+		tmp_n /= 10;
+		pow *= 10;
 	}
-	return (NULL);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		pow = -pow;
+	}
+	while (pow != 0)
+	{
+		ft_putchar_fd(n / pow % 10 + '0', fd);
+		pow /= 10;
+	}
 }

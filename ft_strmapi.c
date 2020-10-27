@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 17:51:10 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/27 14:23:58 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/27 12:18:41 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2020/10/27 22:16:32 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int i;
+	int		len;
+	char	*mapped;
+	int		i;
 
+	if (s == NULL || f == NULL)
+		return (NULL);
+	len = ft_strlen(s);
+	mapped = malloc((len + 1) * sizeof(char));
+	if (mapped == NULL)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		if (((unsigned char *)src)[i] == (unsigned char)c)
-			return (dst + i + 1);
+		mapped[i] = f(i, s[i]);
 		i++;
 	}
-	return (NULL);
+	mapped[i] = '\0';
+	return (mapped);
 }

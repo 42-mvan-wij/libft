@@ -6,18 +6,24 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 18:11:27 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/26 18:14:52 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/27 15:18:39 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memmove(void *dst, const void *src, size_t len)
-{
-	int i;
+#include "libft.h"
 
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned int i;
+
+	if (dst == src)
+		return (dst);
+	if (dst > src)
+		return (ft_memcpy(dst, src, len));
 	i = 0;
 	while (i < len)
 	{
-		dst[i] = src[i];
+		((char *)dst)[i] = ((char *)src)[i];
 		i++;
 	}
 	return (dst);

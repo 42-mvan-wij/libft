@@ -6,23 +6,28 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 18:24:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/26 18:33:24 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/27 17:43:55 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	int max;
-	int i;
+#include "libft.h"
 
-	max = ft_strlen(src);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	unsigned int src_len;
+	unsigned int i;
+
+	if (src == NULL)
+		return (0);
+	src_len = ft_strlen(src);
+	if (dst == NULL || dstsize == 0)
+		return (src_len);
 	i = 0;
-	while (i < max && i < dstsize - 1)
+	while (i < src_len && i < dstsize - 1)
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	if (i == dstsize && i < max + 1)
-		dst[i] = '\0';
-	return (max);
+	dst[i] = '\0';
+	return (src_len);
 }

@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 17:51:10 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/27 14:23:58 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/27 11:22:41 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2020/10/27 22:00:30 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int i;
+	char			*sub;
+	unsigned int	s_len;
+	unsigned int	i;
 
+	if (s == NULL)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start + len > s_len)
+		return (ft_calloc(1, 1));
+	sub = malloc((len + 1) * sizeof(char));
+	if (sub == NULL)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (i < len && i + start < s_len)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		if (((unsigned char *)src)[i] == (unsigned char)c)
-			return (dst + i + 1);
+		sub[i] = s[start + i];
 		i++;
 	}
-	return (NULL);
+	sub[i] = '\0';
+	return (sub);
 }
