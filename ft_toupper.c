@@ -6,13 +6,13 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 15:17:26 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/26 15:23:30 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/27 17:31:47 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	return (c >= 'a' && c <= 'z' ? c - 'a' + 'A' : c);
 }
