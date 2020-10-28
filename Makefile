@@ -6,30 +6,40 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2020/10/27 14:50:40 by mvan-wij      ########   odam.nl          #
+#    Updated: 2020/10/28 12:48:51 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libft
+NAME			= libft
 
-CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
+BONUSFILES		= ft_lst*
 
-SRCEXT		= c
-SRCDIR		= .
-HEADERDIR	= .
-OBJEXT		= o
-BUILDDIR	= obj
-BINDIR		= bin
+CC				= gcc
+CFLAGS			= -Wall -Wextra -Werror
 
-SOURCES		= $(shell find '$(SRCDIR)/' -type f -name '*.$(SRCEXT)')
-OBJECTS		= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
-			   $(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
+SRCEXT			= c
+SRCDIR			= .
+HEADERDIR		= .
+OBJEXT			= o
+BUILDDIR		= obj
+BINDIR			= bin
+
+SOURCES			= $(shell find '$(SRCDIR)/' -type f -name\
+				  '*.$(SRCEXT)' -not -path '*/$(BONUSFILES).$(SRCEXT)')
+BONUSSOURCES	= $(shell find '$(SRCDIR)/' -type f -name\
+				  '$(BONUSFILES).$(SRCEXT)')
+OBJECTS			= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
+				  $(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
+BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
+				  $(BONUSSOURCES:.$(SRCEXT)=.$(OBJEXT)))
 
 all: $(NAME)
 
 $(NAME): $(BUILDDIR)/ $(OBJECTS)
-	ar -cq $(NAME).a $(BUILDDIR)/*.$(OBJEXT)
+	ar -cq $(NAME).a $(OBJECTS)
+
+bonus: $(BUILDDIR)/ $(OBJECTS) $(BONUSOBJECTS)
+	ar -cq $(NAME).a $(OBJECTS) $(BONUSOBJECTS)
 
 so $(NAME).so: $(BUILDDIR)/ $(OBJECTS)
 	$(CC) -shared $(BUILDDIR)/*.$(OBJEXT) -o $(NAME).so
@@ -51,4 +61,4 @@ $(BINDIR)/:
 $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
 	$(CC) $(CFLAGS) -I$(HEADERDIR) -c $< -o $@
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re so bonus
