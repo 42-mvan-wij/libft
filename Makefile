@@ -6,13 +6,14 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2020/10/28 12:48:51 by mvan-wij      ########   odam.nl          #
+#    Updated: 2020/10/28 14:55:11 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= libft
 
 BONUSFILES		= ft_lst*
+MOREBONUS		= *_bonus
 
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror
@@ -27,7 +28,7 @@ BINDIR			= bin
 SOURCES			= $(shell find '$(SRCDIR)/' -type f -name\
 				  '*.$(SRCEXT)' -not -path '*/$(BONUSFILES).$(SRCEXT)')
 BONUSSOURCES	= $(shell find '$(SRCDIR)/' -type f -name\
-				  '$(BONUSFILES).$(SRCEXT)')
+				  '$(BONUSFILES).$(SRCEXT)' '$(MOREBONUS).$(SRCEXT)')
 OBJECTS			= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
 				  $(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
 BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
