@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 12:39:22 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/28 11:52:29 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/28 12:03:23 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ void	ft_putnbr_fd(int n, int fd)
 		divided = n / pow % 10;
 		ft_putchar_fd(n < 0 ? '0' - divided : '0' + divided, fd);
 		pow /= 10;
-		// printf("pow: %i, div: %i\n", pow, divided);
 	}
 }
