@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:59:22 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/28 11:27:04 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/28 20:02:16 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,34 @@ static int	ft_splitcount(char const *s, char c)
 	return (count + 1);
 }
 
+static char	**ft_split_unsafe(char const *s, char c, char **arr)
+{
+	int i;
+	int j;
+	int start;
+
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
+			start = i;
+		if (s[i] == c && (i != 0 && s[i - 1] != c))
+		{
+			arr[j] = ft_substr(s, start, i - start);
+			j++;
+		}
+		i++;
+	}
+	if (s[i - 1] != c)
+	{
+		arr[j] = ft_substr(s, start, i - start);
+		j++;
+	}
+	arr[j] = NULL;
+	return (arr);
+}
+
 char		**ft_split(char const *s, char c)
 {
 	char	**arr;
@@ -45,19 +73,5 @@ char		**ft_split(char const *s, char c)
 	arr = malloc((ft_splitcount(s, c) + 1) * sizeof(char*));
 	if (arr == NULL)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i] != '\0' || (s[i - 1] != c && s[i - 1] != '\0'))
-	{
-		if (s[i] != c && (i == 0 || s[i - 1] == c))
-			start = i;
-		if ((s[i] == c || s[i] == '\0') && (i != 0 && s[i - 1] != c))
-		{
-			arr[j] = ft_substr(s, start, i - start);
-			j++;
-		}
-		i++;
-	}
-	arr[j] = NULL;
-	return (arr);
+	return (ft_split_unsafe(s, c, arr));
 }
