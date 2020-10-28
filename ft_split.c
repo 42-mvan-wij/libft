@@ -6,24 +6,31 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:59:22 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/27 14:17:24 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/28 11:27:04 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static int	ft_chrc(char const *s, char c)
+static int	ft_splitcount(char const *s, char c)
 {
 	int i;
 	int count;
 
 	i = 0;
+	count = 0;
+	while (s[i] == c && s[i] != '\0')
+		i++;
 	while (s[i] != '\0')
 	{
-		count += (s[i] == c);
+		if (s[i] == c && s[i - 1] != c)
+			count++;
 		i++;
 	}
-	return (count);
+	if (s[i - 1] == c)
+		count--;
+	return (count + 1);
 }
 
 char		**ft_split(char const *s, char c)
@@ -33,19 +40,24 @@ char		**ft_split(char const *s, char c)
 	int		j;
 	int		start;
 
-	arr = malloc(ft_chrc(s, c) * sizeof(char*));
+	if (s == NULL)
+		return (NULL);
+	arr = malloc((ft_splitcount(s, c) + 1) * sizeof(char*));
+	if (arr == NULL)
+		return (NULL);
 	i = 0;
 	j = 0;
-	start = 0;
-	while (s[i] != '\0')
+	while (s[i] != '\0' || (s[i - 1] != c && s[i - 1] != '\0'))
 	{
-		if (s[i] == c)
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
+			start = i;
+		if ((s[i] == c || s[i] == '\0') && (i != 0 && s[i - 1] != c))
 		{
-			arr[j] = ft_substr(s, start, i - start - 1);
-			start = i + 1;
+			arr[j] = ft_substr(s, start, i - start);
 			j++;
 		}
 		i++;
 	}
+	arr[j] = NULL;
 	return (arr);
 }
