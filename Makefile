@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2020/10/28 19:15:23 by mvan-wij      ########   odam.nl          #
+#    Updated: 2020/10/28 19:50:44 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,13 @@ OBJEXT			= o
 BUILDDIR		= obj
 BINDIR			= bin
 
-SOURCES			= $(shell find '$(SRCDIR)/' -type f -name\
-				  '*.$(SRCEXT)' -not -name '$(BONUSFILES).$(SRCEXT)')
-BONUSSOURCES	= $(shell find '$(SRCDIR)/' -type f -name\
-				  '$(BONUSFILES).$(SRCEXT)' -name '$(MOREBONUS).$(SRCEXT)')
+SOURCES			= $(shell find '$(SRCDIR)/' -type f \
+					-name '*.$(SRCEXT)' -a \
+					-not -name '$(BONUSFILES).$(SRCEXT)' -a \
+					-not -name '$(MOREBONUS).$(SRCEXT)')
+BONUSSOURCES	= $(shell find '$(SRCDIR)/' -type f \
+					-name '$(BONUSFILES).$(SRCEXT)' -o \
+					-name '$(MOREBONUS).$(SRCEXT)')
 OBJECTS			= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
 				  $(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
 BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
@@ -37,6 +40,8 @@ BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
 all: $(NAME)
 
 $(NAME): $(BUILDDIR)/ $(OBJECTS)
+	@echo $(SOURCES)
+	@echo $(BONUSSOURCES)
 	ar -cq $(NAME).a $(OBJECTS)
 
 bonus: $(BUILDDIR)/ $(OBJECTS) $(BONUSOBJECTS)
