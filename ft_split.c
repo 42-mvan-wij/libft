@@ -6,72 +6,52 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:59:22 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/28 20:02:16 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/28 21:24:05 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	ft_splitcount(char const *s, char c)
+static char	**ft_create_split_arr(char const *str, char c, int *items)
 {
-	int i;
-	int count;
+	char	**arr;
+	char	*s;
 
-	i = 0;
-	count = 0;
-	while (s[i] == c && s[i] != '\0')
-		i++;
-	while (s[i] != '\0')
+	if (str == NULL)
+		return (NULL);
+	s = (char *)str;
+	*items = 0;
+	while (*s != '\0')
 	{
-		if (s[i] == c && s[i - 1] != c)
-			count++;
-		i++;
+		*items += *s != c && (s == str || *(s - 1) == c);
+		s++;
 	}
-	if (s[i - 1] == c)
-		count--;
-	return (count + 1);
-}
-
-static char	**ft_split_unsafe(char const *s, char c, char **arr)
-{
-	int i;
-	int j;
-	int start;
-
-	i = 0;
-	j = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] != c && (i == 0 || s[i - 1] == c))
-			start = i;
-		if (s[i] == c && (i != 0 && s[i - 1] != c))
-		{
-			arr[j] = ft_substr(s, start, i - start);
-			j++;
-		}
-		i++;
-	}
-	if (s[i - 1] != c)
-	{
-		arr[j] = ft_substr(s, start, i - start);
-		j++;
-	}
-	arr[j] = NULL;
+	arr = malloc((*items + 1) * sizeof(char *));
 	return (arr);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *str, char c)
 {
 	char	**arr;
-	int		i;
-	int		j;
-	int		start;
+	char	*s;
+	char	*cur;
+	int		items;
 
-	if (s == NULL)
-		return (NULL);
-	arr = malloc((ft_splitcount(s, c) + 1) * sizeof(char*));
+	arr = ft_create_split_arr(str, c, &items);
 	if (arr == NULL)
 		return (NULL);
-	return (ft_split_unsafe(s, c, arr));
+	cur = (char *)str;
+	while (*cur != '\0')
+	{
+		if (*cur != c && (cur == str || *(cur - 1) == c))
+			s = cur;
+		if (*cur != c && (*(cur + 1) == c || *(cur + 1) == '\0'))
+		{
+			*arr = ft_substr(s, 0, cur - s + 1);
+			arr++;
+		}
+		cur++;
+	}
+	*arr = NULL;
+	return (arr - items);
 }
