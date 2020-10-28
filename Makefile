@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2020/10/28 16:10:05 by mvan-wij      ########   odam.nl          #
+#    Updated: 2020/10/28 19:15:23 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ BUILDDIR		= obj
 BINDIR			= bin
 
 SOURCES			= $(shell find '$(SRCDIR)/' -type f -name\
-				  '*.$(SRCEXT)' -not -path '*/$(BONUSFILES).$(SRCEXT)')
+				  '*.$(SRCEXT)' -not -name '$(BONUSFILES).$(SRCEXT)')
 BONUSSOURCES	= $(shell find '$(SRCDIR)/' -type f -name\
-				  '$(BONUSFILES).$(SRCEXT)' -path '*/$(MOREBONUS).$(SRCEXT)')
+				  '$(BONUSFILES).$(SRCEXT)' -name '$(MOREBONUS).$(SRCEXT)')
 OBJECTS			= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
 				  $(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
 BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
