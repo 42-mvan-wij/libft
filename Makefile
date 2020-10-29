@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2020/10/28 19:50:44 by mvan-wij      ########   odam.nl          #
+#    Updated: 2020/10/29 12:24:56 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,6 @@ BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
 all: $(NAME)
 
 $(NAME): $(BUILDDIR)/ $(OBJECTS)
-	@echo $(SOURCES)
-	@echo $(BONUSSOURCES)
 	ar -cq $(NAME).a $(OBJECTS)
 
 bonus: $(BUILDDIR)/ $(OBJECTS) $(BONUSOBJECTS)
