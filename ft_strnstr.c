@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:11:05 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/30 22:04:58 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/30 22:17:30 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (len >= len_little)
 	{
 		len--;
-		if (ft_memcmp(b, little, len_little))
+		if (ft_memcmp(b, little, len_little) == 0)
 			return (b);
 		b++;
 	}
