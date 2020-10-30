@@ -6,11 +6,11 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2020/10/29 12:24:56 by mvan-wij      ########   odam.nl          #
+#    Updated: 2020/10/30 21:04:00 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= libft
+NAME			= libft.a
 
 BONUSFILES		= ft_lst*
 MOREBONUS		= *_bonus
@@ -40,19 +40,19 @@ BONUSOBJECTS	= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,\
 all: $(NAME)
 
 $(NAME): $(BUILDDIR)/ $(OBJECTS)
-	ar -cq $(NAME).a $(OBJECTS)
+	ar -cq $(NAME) $(OBJECTS)
 
 bonus: $(BUILDDIR)/ $(OBJECTS) $(BONUSOBJECTS)
-	ar -cq $(NAME).a $(OBJECTS) $(BONUSOBJECTS)
+	ar -cq $(NAME) $(OBJECTS) $(BONUSOBJECTS)
 
-so $(NAME).so: $(BUILDDIR)/ $(OBJECTS)
-	$(CC) -shared $(BUILDDIR)/*.$(OBJEXT) -o $(NAME).so
+so $(NAME:a=so): $(BUILDDIR)/ $(OBJECTS)
+	$(CC) $(CFLAGS) -shared $(BUILDDIR)/*.$(OBJEXT) -o $(NAME:a=so)
 
 clean:
 	/bin/rm -rf $(BUILDDIR)/
 
 fclean: clean
-	/bin/rm -f $(NAME).a
+	/bin/rm -f $(NAME)
 
 re: fclean all
 

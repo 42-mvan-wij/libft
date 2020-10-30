@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:45:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/28 16:08:01 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/29 13:37:59 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *l, void *(*f)(void *), \
 						void (*d)(void *));
+
+int					ft_lstinsert(t_list **lst, t_list *new, unsigned int i);
 
 int					ft_isupper(int c);
 int					ft_islower(int c);

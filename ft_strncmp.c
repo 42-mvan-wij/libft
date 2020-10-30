@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:01:28 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/27 15:34:48 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/29 17:20:04 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
+	if (i == n)
+		return (0);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

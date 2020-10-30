@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_substr.c                                        :+:    :+:            */
+/*   ft_lstinsert_bonus.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/27 11:22:41 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/30 15:55:27 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/29 13:20:54 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2020/10/29 13:48:11 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int		ft_lstinsert(t_list **lst, t_list *new, unsigned int i)
 {
-	char			*sub;
-	unsigned int	s_len;
-	unsigned int	i;
+	t_list *l;
 
-	if (s == NULL)
-		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		return (ft_calloc(1, 1));
-	sub = malloc((len + 1) * sizeof(char));
-	if (sub == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len && i + start < s_len)
+	if (lst == NULL || new == NULL)
+		return (0);
+	if (i == 0)
 	{
-		sub[i] = s[start + i];
-		i++;
+		new->next = *lst;
+		*lst = new;
+		return (1);
 	}
-	sub[i] = '\0';
-	return (sub);
+	l = *lst;
+	while (i - 1 > 0 && l != NULL)
+	{
+		i--;
+		l = l->next;
+	}
+	if (l == NULL)
+		return (0);
+	new->next = l->next;
+	l->next = new;
+	return (1);
 }

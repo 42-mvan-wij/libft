@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:33:52 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/27 21:33:43 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/30 13:24:27 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int offset;
-	int result;
-	int is_neg;
+	int				offset;
+	long long int	result;
+	int				is_neg;
 
 	offset = 0;
 	while (str[offset] != '\0' && \
@@ -29,8 +29,8 @@ int	ft_atoi(const char *str)
 	while (ft_isdigit(str[offset]))
 	{
 		result *= 10;
-		result += is_neg ? ('0' - str[offset]) : (str[offset] - '0');
+		result -= str[offset] - '0';
 		offset++;
 	}
-	return (result);
+	return (is_neg ? result : -result);
 }

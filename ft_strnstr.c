@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:11:05 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/27 20:51:30 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/30 21:11:19 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	unsigned int i;
 	unsigned int j;
 
+	if (big == NULL || little == NULL)
+		return (NULL);
 	if (little[0] == '\0')
 		return ((char *)big);
 	i = 0;
