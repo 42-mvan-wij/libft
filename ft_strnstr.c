@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:11:05 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/30 21:11:19 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/30 22:04:58 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,21 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned int i;
-	unsigned int j;
+	size_t	len_little;
+	char	*b;
 
 	if (big == NULL || little == NULL)
 		return (NULL);
 	if (little[0] == '\0')
 		return ((char *)big);
-	i = 0;
-	while (i < len)
+	b = (char *)big;
+	len_little = ft_strlen(little);
+	while (len >= len_little)
 	{
-		j = 0;
-		while (little[j] != '\0' && little[j] == big[i + j] && i + j < len)
-			j++;
-		if (little[j] == '\0')
-			return ((char *)big + i);
-		i++;
+		len--;
+		if (ft_memcmp(b, little, len_little))
+			return (b);
+		b++;
 	}
 	return (NULL);
 }
