@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memmove.c                                       :+:    :+:            */
+/*   ft_itoa_basei_bonus.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 18:11:27 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/31 14:20:35 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/31 11:11:59 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2020/10/31 14:18:36 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_itoa_basei(int nbr, int base)
 {
-	unsigned int i;
+	char	*basechars;
+	int		i;
 
-	if (dst == src)
-		return (dst);
-	if (dst > src)
-		return (ft_memcpy(dst, src, len));
+	if (base < 2 || base > 36)
+		return (NULL);
+	basechars = malloc((base + 1) * sizeof(char));
+	if (basechars == NULL)
+		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i <= 9 && i < base)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
+		basechars[i] = (char)('0' + i);
 		i++;
 	}
-	return (dst);
+	while (i < base)
+	{
+		basechars[i] = (char)('A' + i - 10);
+		i++;
+	}
+	basechars[i] = '\0';
+	return (ft_itoa_base(nbr, basechars));
 }

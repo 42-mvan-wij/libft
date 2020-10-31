@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:45:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/29 13:37:59 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/31 14:23:09 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,7 @@ int					ft_isxdigit(int c);
 int					ft_ispunct(int c);
 int					ft_isgraph(int c);
 int					ft_iscntrl(int c);
+char				*ft_itoa_base(int nbr, char *basechars);
+char				*ft_itoa_basei(int nbr, int base);
 
 #endif
