@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 10:43:04 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/31 14:18:30 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/10/31 14:46:29 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_nbrlen(int nbr, int base)
 	return (i);
 }
 
-char	*ft_itoa_base(int nbr, char *basechars)
+char		*ft_itoa_base(int nbr, char *basechars)
 {
 	int		base;
 	int		i;
