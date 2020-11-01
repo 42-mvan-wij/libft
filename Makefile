@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2020/11/01 15:39:10 by mvan-wij      ########   odam.nl          #
+#    Updated: 2020/11/01 17:18:35 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,10 @@ all: $(NAME)
 $(NAME): $(NAME).a
 
 $(NAME).a: $(BUILDDIR)/ $(OBJECTS)
-	ar -cr $(NAME) $(OBJECTS)
+	ar -cr $(NAME).a $(OBJECTS)
 
 bonus: $(BUILDDIR)/ $(OBJECTS) $(BONUSOBJECTS)
-	ar -cr $(NAME) $(OBJECTS) $(BONUSOBJECTS)
+	ar -cr $(NAME).a $(OBJECTS) $(BONUSOBJECTS)
 
 so $(NAME).so: $(BUILDDIR)/ $(OBJECTS)
 	$(CC) $(CFLAGS) -shared $(BUILDDIR)/*.$(OBJEXT) -o $(NAME).so
