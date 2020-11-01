@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa_basei_bonus.c                              :+:    :+:            */
+/*   ft_putnbr_base_bonus.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/31 11:11:59 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/01 12:05:26 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/11/01 12:09:02 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2020/11/01 12:37:51 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_itoa_basei(int nbr, int base)
+int		ft_putnbr_base(long long nbr, char *basechars)
 {
-	char	*basechars;
-	int		i;
+	int			base;
+	long long	pow;
+	int			len;
+	int			is_neg;
 
-	if (base < 2 || base > 36)
-		return (NULL);
-	basechars = malloc((base + 1) * sizeof(char));
-	if (basechars == NULL)
-		return (NULL);
-	i = 0;
-	while (i <= 9 && i < base)
+	base = ft_strlen(basechars);
+	if (base < 2)
+		return (-1);
+	pow = 1;
+	len = 1;
+	while (nbr / base / pow != 0)
 	{
-		basechars[i] = (char)('0' + i);
-		i++;
+		pow *= base;
+		len++;
 	}
-	while (i < base)
+	is_neg = (nbr < 0);
+	if (is_neg)
+		ft_putchar_fd('-', 0);
+	while (pow != 0)
 	{
-		basechars[i] = (char)('a' + i - 10);
-		i++;
+		ft_putchar_fd(basechars[(is_neg ? -1 : 1) * (nbr / pow % base)], 0);
+		pow /= base;
 	}
-	basechars[i] = '\0';
-	return (ft_itoa_base(nbr, basechars));
+	return (len + is_neg);
 }

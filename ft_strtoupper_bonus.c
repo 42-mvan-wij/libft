@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa_basei_bonus.c                              :+:    :+:            */
+/*   ft_strtoupper_bonus.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/31 11:11:59 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/01 12:05:26 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/11/01 11:42:38 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2020/11/01 11:47:57 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_itoa_basei(int nbr, int base)
+char	*ft_strtoupper(char *str)
 {
-	char	*basechars;
-	int		i;
+	int i;
 
-	if (base < 2 || base > 36)
-		return (NULL);
-	basechars = malloc((base + 1) * sizeof(char));
-	if (basechars == NULL)
+	if (str == NULL)
 		return (NULL);
 	i = 0;
-	while (i <= 9 && i < base)
+	while (str[i] != '\0')
 	{
-		basechars[i] = (char)('0' + i);
+		str[i] = ft_toupper(str[i]);
 		i++;
 	}
-	while (i < base)
-	{
-		basechars[i] = (char)('a' + i - 10);
-		i++;
-	}
-	basechars[i] = '\0';
-	return (ft_itoa_base(nbr, basechars));
+	return (str);
 }
