@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 18:24:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/03 15:02:31 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/11/03 16:01:24 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int srcsize;
-	unsigned int i;
+	size_t	srcsize;
 
 	srcsize = ft_strlen(src);
 	if (srcsize < dstsize - 1)
