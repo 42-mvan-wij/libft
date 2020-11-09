@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 12:09:02 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/01 12:37:51 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/11/08 17:35:36 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int		ft_putnbr_base(long long nbr, char *basechars)
 	}
 	is_neg = (nbr < 0);
 	if (is_neg)
-		ft_putchar_fd('-', 0);
+		ft_putchar_fd('-', 1);
 	while (pow != 0)
 	{
-		ft_putchar_fd(basechars[(is_neg ? -1 : 1) * (nbr / pow % base)], 0);
+		ft_putchar_fd(basechars[(is_neg ? -1 : 1) * (nbr / pow % base)], 1);
 		pow /= base;
 	}
 	return (len + is_neg);

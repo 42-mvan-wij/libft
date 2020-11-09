@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 11:11:59 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/03 14:49:05 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/11/08 12:10:25 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_itoa_basei(int nbr, int base)
 {
 	char	*basechars;
 	int		i;
+	char	*val;
 
 	if (base < 2 || base > 36)
 		return (NULL);
@@ -34,5 +35,7 @@ char	*ft_itoa_basei(int nbr, int base)
 		i++;
 	}
 	basechars[i] = '\0';
-	return (ft_itoa_base(nbr, basechars));
+	val = ft_itoa_base(nbr, basechars);
+	free(basechars);
+	return (val);
 }
