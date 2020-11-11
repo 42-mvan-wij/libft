@@ -6,9 +6,11 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 15:25:24 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 12:00:35 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/11/11 15:27:50 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_iscntrl(int c)
 {
