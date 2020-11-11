@@ -6,18 +6,19 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 18:24:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/04 23:21:50 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/11/11 13:56:43 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t init_dstsize;
+	size_t dst_len;
 
-	init_dstsize = ft_strlen(dst);
-	if (init_dstsize > dstsize) // [>=] ?
+	dst_len = ft_strlen(dst);
+	if (dst_len >= dstsize)
 		return (dstsize + ft_strlen(src));
-	return (init_dstsize + ft_strlcpy(dst + init_dstsize, src, dstsize - init_dstsize));
+	return (dst_len + ft_strlcpy(dst + dst_len, src, dstsize - dst_len));
 }

@@ -6,11 +6,9 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 15:29:11 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/28 15:54:04 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/11/11 12:01:36 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_islower(int c)
 {

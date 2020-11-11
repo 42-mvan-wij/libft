@@ -6,11 +6,11 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 15:25:07 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/03 14:49:04 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/11/11 12:02:52 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 char	*ft_itoa(int n)
 {

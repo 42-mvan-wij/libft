@@ -6,11 +6,12 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 11:11:59 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/08 12:10:25 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/11/11 13:57:27 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_itoa_basei(int nbr, int base)
 {

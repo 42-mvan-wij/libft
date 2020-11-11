@@ -6,11 +6,12 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 18:11:27 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/03 14:48:56 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/11/11 13:56:58 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
