@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:45:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:59:29 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2020/11/28 16:41:05 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ char				*ft_itoa_basei(int nbr, int base);
 int					ft_putnbr_base(long long nbr, char *basechars);
 char				*ft_strtolower(char *str);
 char				*ft_strtoupper(char *str);
+char				*ft_memdup(const void *ptr, size_t size);
 
 #endif

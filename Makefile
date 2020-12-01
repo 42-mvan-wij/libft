@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2020/11/03 14:53:55 by mvan-wij      ########   odam.nl          #
+#    Updated: 2020/11/25 13:36:47 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,17 +68,18 @@ BONUSSOURCES	= ./ft_lstclear.c $\
 				  ./ft_lstadd_back.c $\
 
 MYBONUSSOURCES	= ./ft_islower_bonus.c $\
-				  ./ft_strtolower_bonus.c $\
-				  ./ft_itoa_base_bonus.c $\
-				  ./ft_isspace_bonus.c $\
-				  ./ft_putnbr_base_bonus.c $\
-				  ./ft_ispunct_bonus.c $\
-				  ./ft_strtoupper_bonus.c $\
-				  ./ft_itoa_basei_bonus.c $\
 				  ./ft_iscntrl_bonus.c $\
 				  ./ft_isupper_bonus.c $\
 				  ./ft_isgraph_bonus.c $\
-				  ./ft_isxdigit_bonus.c
+				  ./ft_isxdigit_bonus.c $\
+				  ./ft_isspace_bonus.c $\
+				  ./ft_ispunct_bonus.c $\
+				  ./ft_strtolower_bonus.c $\
+				  ./ft_strtoupper_bonus.c $\
+				  ./ft_itoa_base_bonus.c $\
+				  ./ft_putnbr_base_bonus.c $\
+				  ./ft_itoa_basei_bonus.c $\
+				  ./ft_memdup_bonus.c
 
 OBJECTS			=	$(patsubst $(SRCDIR)/%,$(BUILDDIR)/%, $\
 					$(SOURCES:$(SRCEXT)=$(OBJEXT)))

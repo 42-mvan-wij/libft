@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstclear.c                                      :+:    :+:            */
+/*   ft_memdup.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/28 13:09:51 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/12/01 23:22:39 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/11/25 12:51:32 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2020/11/25 12:56:49 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+char	*ft_memdup(const void *ptr, size_t size)
 {
-	t_list *next;
+	void	*dst;
 
-	while (*lst != NULL)
+	dst = malloc(size);
+	if (dst == NULL)
+		return (NULL);
+	while (size > 0)
 	{
-		next = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = next;
+		size--;
+		((char *)dst)[size] = ((char *)ptr)[size];
 	}
+	return (dst);
 }
