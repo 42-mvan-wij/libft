@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 12:59:50 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:57:01 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 17:05:54 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int len;
+	int	len;
 
 	if (lst == NULL)
 		return (0);

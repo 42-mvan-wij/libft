@@ -6,13 +6,13 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 15:17:56 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/10/28 15:19:38 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 16:43:57 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isxdigit(int c)
+int	ft_isxdigit(int c)
 {
 	return (ft_isdigit(c) || (c >= 'A' && c <= 'F') || (c >= 'a' && c <= 'f'));
 }

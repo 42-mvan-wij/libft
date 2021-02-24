@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 18:17:55 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:32:21 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 17:11:24 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,21 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int i;
+	unsigned int	i;
+	char			*cs1;
+	char			*cs2;
+	char			*ucs1;
+	char			*ucs2;
 
+	cs1 = s1;
+	cs2 = s2;
+	ucs1 = s1;
+	ucs2 = s2;
 	i = 0;
 	while (i < n)
 	{
-		if (((char *)s1)[i] != ((char *)s2)[i])
-			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		if (cs1[i] != cs2[i])
+			return (ucs1[i] - ucs2[i]);
 		i++;
 	}
 	return (0);

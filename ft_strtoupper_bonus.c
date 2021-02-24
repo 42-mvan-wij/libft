@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 11:42:38 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:56:30 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 17:24:52 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strtoupper(char *str)
 {
-	int i;
+	int	i;
 
 	if (str == NULL)
 		return (NULL);

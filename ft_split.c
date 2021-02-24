@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:59:22 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 16:42:46 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 17:18:53 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	**ft_create_split_arr(char const *str, char c, int *items)
 
 static void	*ft_clearsplitarr(char **arr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (arr[i] != NULL)
@@ -44,7 +44,7 @@ static void	*ft_clearsplitarr(char **arr)
 	return (NULL);
 }
 
-char		**ft_split(char const *str, char c)
+char	**ft_split(char const *str, char c)
 {
 	char	**arr;
 	char	*s;

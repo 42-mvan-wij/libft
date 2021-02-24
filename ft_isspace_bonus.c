@@ -6,11 +6,11 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 15:15:05 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 12:01:56 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 16:43:46 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isspace(int c)
+int	ft_isspace(int c)
 {
 	return ((c >= '\t' && c <= '\r') || c == ' ');
 }

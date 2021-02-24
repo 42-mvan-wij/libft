@@ -6,11 +6,13 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 15:23:53 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:52:42 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 17:23:04 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	return (c >= 'A' && c <= 'Z' ? c - 'A' + 'a' : c);
+	if (c >= 'A' && c <= 'Z')
+		return (c - 'A' + 'a');
+	return (c);
 }

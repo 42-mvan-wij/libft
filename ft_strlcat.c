@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 18:24:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:56:43 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 17:20:56 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t dst_len;
+	size_t	dst_len;
 
 	dst_len = ft_strlen(dst);
 	if (dst_len >= dstsize)

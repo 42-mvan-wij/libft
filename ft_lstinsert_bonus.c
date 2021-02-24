@@ -6,16 +6,16 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/29 13:20:54 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:57:16 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 17:05:37 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int		ft_lstinsert(t_list **lst, t_list *new, unsigned int i)
+int	ft_lstinsert(t_list **lst, t_list *new, unsigned int i)
 {
-	t_list *l;
+	t_list	*l;
 
 	if (lst == NULL || new == NULL)
 		return (0);

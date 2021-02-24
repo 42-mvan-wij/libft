@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlen.c                                        :+:    :+:            */
+/*   ft_nbrlen.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 18:21:31 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 17:21:04 by mvan-wij      ########   odam.nl         */
+/*   Created: 2021/02/24 16:50:36 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2021/02/24 17:04:09 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s)
+int	ft_nbrlen(int nbr, int base)
 {
-	size_t	i;
+	int		i;
 
-	i = 0;
-	while (s[i] != '\0')
+	i = 1;
+	if (nbr < 0)
 		i++;
+	while (nbr / base != 0)
+	{
+		nbr /= base;
+		i++;
+	}
 	return (i);
 }

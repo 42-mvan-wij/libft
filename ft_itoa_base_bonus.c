@@ -6,29 +6,14 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 10:43:04 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:57:29 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 16:50:32 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int	ft_nbrlen(int nbr, int base)
-{
-	int i;
-
-	i = 1;
-	if (nbr < 0)
-		i++;
-	while (nbr / base != 0)
-	{
-		nbr /= base;
-		i++;
-	}
-	return (i);
-}
-
-char		*ft_itoa_base(int nbr, char *basechars)
+char	*ft_itoa_base(int nbr, char *basechars)
 {
 	int		base;
 	int		i;
@@ -40,13 +25,16 @@ char		*ft_itoa_base(int nbr, char *basechars)
 	base = ft_strlen(basechars);
 	if (base < 2)
 		return (NULL);
-	is_neg = (nbr < 0) ? 1 : 0;
+	is_neg = nbr < 0;
 	i = ft_nbrlen(nbr, base);
 	res = ft_calloc(i + 1, sizeof(char));
 	while (i != is_neg)
 	{
 		i--;
-		res[i] = basechars[is_neg ? -(nbr % base) : nbr % base];
+		if (is_neg)
+			res[i] = basechars[-nbr % base];
+		else
+			res[i] = basechars[nbr % base];
 		nbr /= base;
 	}
 	if (is_neg)

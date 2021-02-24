@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 13:09:51 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/12/01 23:22:39 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/02/24 17:05:18 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *next;
+	t_list	*next;
 
 	while (*lst != NULL)
 	{
