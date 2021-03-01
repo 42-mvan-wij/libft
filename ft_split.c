@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:59:22 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/01 12:15:18 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/03/01 12:19:03 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	*ft_clearsplitarr(char **arr, int n)
 	{
 		n--;
 		if (arr[n] != NULL)
-			ßfree(arr[n]);
+			free(arr[n]);
 	}
 	free(arr);
 	return (NULL);
