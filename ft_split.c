@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:59:22 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 17:18:53 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/03/01 12:15:18 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,13 @@ static char	**ft_create_split_arr(char const *str, char c, int *items)
 	return (arr);
 }
 
-static void	*ft_clearsplitarr(char **arr)
+static void	*ft_clearsplitarr(char **arr, int n)
 {
-	int	i;
-
-	i = 0;
-	while (arr[i] != NULL)
+	while (n)
 	{
-		free(arr[i]);
-		i++;
+		n--;
+		if (arr[n] != NULL)
+			ßfree(arr[n]);
 	}
 	free(arr);
 	return (NULL);
@@ -63,7 +61,7 @@ char	**ft_split(char const *str, char c)
 		{
 			*arr = ft_substr(s, 0, cur - s + 1);
 			if (*arr == NULL)
-				return (ft_clearsplitarr(arr - items));
+				return (ft_clearsplitarr(arr - items, items));
 			arr++;
 		}
 		cur++;
