@@ -20,10 +20,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	char			*ucs1;
 	char			*ucs2;
 
-	cs1 = s1;
-	cs2 = s2;
-	ucs1 = s1;
-	ucs2 = s2;
+	cs1 = (char *)s1;
+	cs2 = (char *)s2;
+	ucs1 = (char *)s1;
+	ucs2 = (char *)s2;
 	i = 0;
 	while (i < n)
 	{

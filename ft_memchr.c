@@ -19,9 +19,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	ucc;
 	void			*vs;
 
-	ucs = s;
+	ucs = (unsigned char *)s;
 	ucc = c;
-	vs = s;
+	vs = (void *)s;
 	i = 0;
 	while (i < n)
 	{

@@ -82,7 +82,8 @@ MYBONUSSOURCES	= ./ft_islower_bonus.c \
 				  ./ft_memdup_bonus.c \
 				  ./get_next_line.c \
 				  ./get_next_line_utils.c \
-				  ./ft_atod.c
+				  ./ft_atod.c \
+				  ./ft_nbrlen.c
 
 OBJECTS			=	$(patsubst $(SRCDIR)/%,$(BUILDDIR)/%, \
 					$(SOURCES:$(SRCEXT)=$(OBJEXT)))

@@ -21,8 +21,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	char			*cdst;
 
 	cdst = dst;
-	csrc = src;
-	ucsrc = src;
+	csrc = (char *)src;
+	ucsrc = (unsigned char *)src;
 	cc = c;
 	i = 0;
 	while (i < n)
