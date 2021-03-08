@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:36:48 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 17:20:44 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/03/08 17:26:35 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strchr(const char *s, int c)
 	char	cc;
 	char	*cs;
 
-	cc = c;
+	cc = (char)c;
 	cs = (char *)s;
 	i = 0;
 	while (s[i] != '\0')

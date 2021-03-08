@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 17:51:10 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 17:08:29 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/03/08 17:26:56 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	char			*csrc;
 	char			*cdst;
 
-	cdst = dst;
+	cdst = (char *)dst;
 	csrc = (char *)src;
 	ucsrc = (unsigned char *)src;
-	cc = c;
+	cc = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{
