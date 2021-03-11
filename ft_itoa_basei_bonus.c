@@ -6,17 +6,18 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 11:11:59 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:57:27 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/03/11 13:36:18 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+#include <stdint.h>
 
-char	*ft_itoa_basei(int nbr, int base)
+char	*ft_itoa_basei(int64_t nbr, uint8_t base, int cap)
 {
 	char	*basechars;
-	int		i;
+	uint8_t	i;
 	char	*val;
 
 	if (base < 2 || base > 36)
@@ -25,14 +26,14 @@ char	*ft_itoa_basei(int nbr, int base)
 	if (basechars == NULL)
 		return (NULL);
 	i = 0;
-	while (i <= 9 && i < base)
-	{
-		basechars[i] = (char)('0' + i);
-		i++;
-	}
 	while (i < base)
 	{
-		basechars[i] = (char)('a' + i - 10);
+		if (i < 10)
+			basechars[i] = (char)('0' + i);
+		else if (cap)
+			basechars[i] = (char)('A' + i - 10);
+		else
+			basechars[i] = (char)('a' + i - 10);
 		i++;
 	}
 	basechars[i] = '\0';

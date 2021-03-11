@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:45:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/08 17:26:03 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/03/11 14:31:38 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdint.h>
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -45,7 +46,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
-char	*ft_itoa(int n);
+char	*ft_itoa(int64_t n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
@@ -77,9 +78,13 @@ int		ft_isxdigit(int c);
 int		ft_ispunct(int c);
 int		ft_isgraph(int c);
 int		ft_iscntrl(int c);
-int		ft_nbrlen(int nbr, int base);
-char	*ft_itoa_base(int nbr, char *basechars);
-char	*ft_itoa_basei(int nbr, int base);
+uint8_t	ft_nbrlen(int64_t nbr, uint32_t base);
+uint8_t	ft_nbrlen_u(int64_t nbr, uint32_t base);
+char	*ft_itoa_base(int64_t nbr, char *basechars);
+char	*ft_itoa_basei(int64_t nbr, uint8_t base, int cap);
+char	*ft_utoa(uint64_t nbr);
+char	*ft_utoa_base(uint64_t nbr, char *basechars);
+char	*ft_utoa_basei(uint64_t nbr, uint8_t base, int cap);
 int		ft_putnbr_base(long long nbr, char *basechars);
 char	*ft_strtolower(char *str);
 char	*ft_strtoupper(char *str);

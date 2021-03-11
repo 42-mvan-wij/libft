@@ -1,45 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa_base_bonus.c                               :+:    :+:            */
+/*   ft_utoa_bonus.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/31 10:43:04 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/11 13:28:44 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/26 15:25:07 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2021/03/11 13:51:16 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 #include <stdint.h>
-#include <stdbool.h>
 
-char	*ft_itoa_base(int64_t nbr, char *basechars)
+char	*ft_utoa(uint64_t nbr)
 {
-	size_t	base;
 	uint8_t	i;
-	bool	is_neg;
 	char	*res;
 
-	if (basechars == NULL)
-		return (NULL);
-	base = ft_strlen(basechars);
-	if (base < 2)
-		return (NULL);
-	is_neg = nbr < 0;
-	i = ft_nbrlen(nbr, base);
+	i = ft_nbrlen_u(nbr, 10);
 	res = ft_calloc(i + 1, sizeof(char));
-	while (i != is_neg)
+	while (i != 0)
 	{
 		i--;
-		if (is_neg)
-			res[i] = basechars[-nbr % base];
-		else
-			res[i] = basechars[nbr % base];
-		nbr /= base;
+		res[i] = '0' + (nbr % 10);
+		nbr /= 10;
 	}
-	if (is_neg)
-		res[0] = '-';
 	return (res);
 }

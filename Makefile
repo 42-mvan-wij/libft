@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2021/03/01 12:14:20 by mvan-wij      ########   odam.nl          #
+#    Updated: 2021/03/11 13:49:43 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,9 @@ NAME			= libft
 
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror
+ifdef DEBUG
+CFLAGS += -g
+endif
 
 SRCEXT			= c
 SRCDIR			= .
@@ -76,14 +79,18 @@ MYBONUSSOURCES	= ./ft_islower_bonus.c \
 				  ./ft_ispunct_bonus.c \
 				  ./ft_strtolower_bonus.c \
 				  ./ft_strtoupper_bonus.c \
-				  ./ft_itoa_base_bonus.c \
 				  ./ft_putnbr_base_bonus.c \
-				  ./ft_itoa_basei_bonus.c \
 				  ./ft_memdup_bonus.c \
 				  ./get_next_line.c \
 				  ./get_next_line_utils.c \
 				  ./ft_atod.c \
-				  ./ft_nbrlen.c
+				  ./ft_nbrlen.c \
+				  ./ft_nbrlen_u.c\
+				  ./ft_itoa_base_bonus.c \
+				  ./ft_itoa_basei_bonus.c \
+				  ./ft_utoa_bonus.c \
+				  ./ft_utoa_base_bonus.c \
+				  ./ft_utoa_basei_bonus.c
 
 OBJECTS			=	$(patsubst $(SRCDIR)/%,$(BUILDDIR)/%, \
 					$(SOURCES:$(SRCEXT)=$(OBJEXT)))
@@ -105,8 +112,8 @@ $(NAME).a: $(BUILDDIR)/ $(OBJECTS)
 bonus:
 	$(MAKE) WITH_BONUS=1 all
 
-so $(NAME).so: $(BUILDDIR)/ $(OBJECTS)
-	$(CC) $(CFLAGS) -shared $(OBJECTS) -o $(NAME).so
+debug:
+	$(MAKE) DEBUG=1
 
 clean:
 	/bin/rm -rf $(BUILDDIR)/

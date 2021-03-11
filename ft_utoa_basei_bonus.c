@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa_base_bonus.c                               :+:    :+:            */
+/*   ft_utoa_basei_bonus.c                              :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/31 10:43:04 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/11 13:28:44 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/31 11:11:59 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2021/03/11 13:47:42 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 #include <stdint.h>
-#include <stdbool.h>
 
-char	*ft_itoa_base(int64_t nbr, char *basechars)
+char	*ft_utoa_basei(uint64_t nbr, uint8_t base, int cap)
 {
-	size_t	base;
+	char	*basechars;
 	uint8_t	i;
-	bool	is_neg;
-	char	*res;
+	char	*val;
 
+	if (base < 2 || base > 36)
+		return (NULL);
+	basechars = malloc((base + 1) * sizeof(char));
 	if (basechars == NULL)
 		return (NULL);
-	base = ft_strlen(basechars);
-	if (base < 2)
-		return (NULL);
-	is_neg = nbr < 0;
-	i = ft_nbrlen(nbr, base);
-	res = ft_calloc(i + 1, sizeof(char));
-	while (i != is_neg)
+	i = 0;
+	while (i < base)
 	{
-		i--;
-		if (is_neg)
-			res[i] = basechars[-nbr % base];
+		if (i < 10)
+			basechars[i] = (char)('0' + i);
+		else if (cap)
+			basechars[i] = (char)('A' + i - 10);
 		else
-			res[i] = basechars[nbr % base];
-		nbr /= base;
+			basechars[i] = (char)('a' + i - 10);
+		i++;
 	}
-	if (is_neg)
-		res[0] = '-';
-	return (res);
+	basechars[i] = '\0';
+	val = ft_utoa_base(nbr, basechars);
+	free(basechars);
+	return (val);
 }
