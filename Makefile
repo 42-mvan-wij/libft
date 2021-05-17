@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2021/03/11 13:49:43 by mvan-wij      ########   odam.nl          #
+#    Updated: 2021/05/15 13:28:24 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ BONUSSOURCES	= ./ft_lstclear.c \
 				  ./ft_lstsize.c \
 				  ./ft_lstadd_back.c \
 
-MYBONUSSOURCES	= ./ft_islower_bonus.c \
+MYBONUSSOURCES	= ./ft_malloc.c \
+				  ./ft_islower_bonus.c \
 				  ./ft_iscntrl_bonus.c \
 				  ./ft_isupper_bonus.c \
 				  ./ft_isgraph_bonus.c \
@@ -90,7 +91,8 @@ MYBONUSSOURCES	= ./ft_islower_bonus.c \
 				  ./ft_itoa_basei_bonus.c \
 				  ./ft_utoa_bonus.c \
 				  ./ft_utoa_base_bonus.c \
-				  ./ft_utoa_basei_bonus.c
+				  ./ft_utoa_basei_bonus.c \
+				  ./ft_treenew.c
 
 OBJECTS			=	$(patsubst $(SRCDIR)/%,$(BUILDDIR)/%, \
 					$(SOURCES:$(SRCEXT)=$(OBJEXT)))

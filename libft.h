@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:45:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/11 14:38:27 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/05/15 13:27:47 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ t_list	*ft_lstmap(t_list *l, void *(*f)(void *), void (*d)(void *));
 
 int		ft_lstinsert(t_list **lst, t_list *new, unsigned int i);
 
+void	*ft_malloc(size_t size);
 int		ft_isupper(int c);
 int		ft_islower(int c);
 int		ft_isspace(int c);
@@ -90,6 +91,15 @@ char	*ft_strtolower(char *str);
 char	*ft_strtoupper(char *str);
 void	*ft_memdup(const void *ptr, size_t size);
 double	ft_atod(const char *str);
+
+typedef struct s_tree
+{
+	void			*content;
+	struct s_tree	*left;
+	struct s_tree	*right;
+}	t_tree;
+
+t_tree	*ft_treenew(void *content, t_tree *left, t_tree *right);
 
 int		get_next_line(int fd, char **line);
 
