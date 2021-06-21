@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2021/05/15 13:28:24 by mvan-wij      ########   odam.nl          #
+#    Updated: 2021/06/22 01:56:36 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,8 @@ MYBONUSSOURCES	= ./ft_malloc.c \
 				  ./ft_utoa_bonus.c \
 				  ./ft_utoa_base_bonus.c \
 				  ./ft_utoa_basei_bonus.c \
-				  ./ft_treenew.c
+				  ./ft_treenew.c \
+				  ./ft_str_filter.c
 
 ifdef BONUS
 	SOURCES += $(BONUSSOURCES) $(MYBONUSSOURCES)

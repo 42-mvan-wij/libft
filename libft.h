@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:45:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/05/15 13:27:47 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/06/22 00:42:57 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ char	*ft_strtolower(char *str);
 char	*ft_strtoupper(char *str);
 void	*ft_memdup(const void *ptr, size_t size);
 double	ft_atod(const char *str);
+char	*ft_str_filter(char *str, char *remove_set);
 
 typedef struct s_tree
 {
