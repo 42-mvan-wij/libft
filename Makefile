@@ -94,15 +94,12 @@ MYBONUSSOURCES	= ./ft_malloc.c \
 				  ./ft_utoa_basei_bonus.c \
 				  ./ft_treenew.c
 
+ifdef BONUS
+	SOURCES += $(BONUSSOURCES) $(MYBONUSSOURCES)
+endif
+
 OBJECTS			=	$(patsubst $(SRCDIR)/%,$(BUILDDIR)/%, \
 					$(SOURCES:$(SRCEXT)=$(OBJEXT)))
-BONUSOBJECTS	=	$(patsubst $(SRCDIR)/%,$(BUILDDIR)/%, \
-					$(BONUSSOURCES:$(SRCEXT)=$(OBJEXT)) \
-					$(MYBONUSSOURCES:$(SRCEXT)=$(OBJEXT)))
-
-ifdef WITH_BONUS
-	OBJECTS += $(BONUSOBJECTS)
-endif
 
 all: $(NAME)
 
@@ -112,7 +109,7 @@ $(NAME).a: $(BUILDDIR)/ $(OBJECTS)
 	ar -cr $(NAME).a $(OBJECTS)
 
 bonus:
-	$(MAKE) WITH_BONUS=1 all
+	$(MAKE) BONUS=1
 
 debug:
 	$(MAKE) DEBUG=1
@@ -131,4 +128,9 @@ $(BUILDDIR)/:
 $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
 	$(CC) $(CFLAGS) -I$(HEADERDIR) -c $< -o $@
 
-.PHONY: all clean fclean re so bonus
+# Can be used as follows:
+# $(LIBFT): $(addprefix $(dir $(LIBFT)), $(shell $(MAKE) -s -C $(dir $(LIBFT)) BONUS=1 sources))
+sources:
+	@echo $(SOURCES)
+
+.PHONY: all clean fclean re so bonus debug sources
