@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_ispunct_bonus.c                                 :+:    :+:            */
+/*   ft_memrchr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/28 15:20:21 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 16:43:43 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/26 18:15:11 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2021/06/22 13:53:32 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-int	ft_ispunct(int c)
+/**
+ * Search for char `c` in `ptr` with lengh `n` starting from the end
+ */
+void	*ft_memchr(const void *const_ptr, int c, size_t n)
 {
-	return (ft_isprint(c) && !ft_isalnum(c));
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)const_ptr;
+	while (n > 0)
+	{
+		n--;
+		if (ptr[n] == (unsigned char)c)
+			return ((void *)const_ptr + n);
+	}
+	return (NULL);
 }

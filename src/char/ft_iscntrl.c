@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_iscntrl_bonus.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/26 18:15:11 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/08 17:26:47 by mvan-wij      ########   odam.nl         */
+/*   Created: 2020/10/28 15:25:24 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2021/06/22 13:01:55 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_iscntrl(int c)
 {
-	unsigned int	i;
-	unsigned char	*ucs;
-	unsigned char	ucc;
-	void			*vs;
-
-	ucs = (unsigned char *)s;
-	ucc = (unsigned char)c;
-	vs = (void *)s;
-	i = 0;
-	while (i < n)
-	{
-		if (ucs[i] == ucc)
-			return (vs + i);
-		i++;
-	}
-	return (NULL);
+	return (!ft_isprint(c));
 }

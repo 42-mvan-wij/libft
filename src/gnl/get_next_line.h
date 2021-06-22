@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   get_next_line_3.h                                  :+:    :+:            */
+/*   get_next_line.h                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 16:18:18 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/28 12:46:23 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/06/22 13:56:35 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # include <unistd.h>
+# include <stdlib.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 128
 # endif
@@ -27,9 +28,9 @@ typedef struct s_buffer
 }					t_buffer;
 
 int			get_next_line(int fd, char **line);
-void		ft_memcpy(const void *dst, void *src, ssize_t n);
-t_buffer	*new_buffer(ssize_t size);
-int			error(t_buffer **buf_arr);
-int			error2(int fd, t_buffer **buf_arr);
+t_buffer	*gnl_new_buffer(ssize_t size);
+int			gnl_error(t_buffer **buf_arr);
+int			gnl_error_fd(int fd, t_buffer **buf_arr);
+void		gnl_next(t_buffer **buf);
 
 #endif
