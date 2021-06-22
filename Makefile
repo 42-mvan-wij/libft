@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2021/06/22 14:15:49 by mvan-wij      ########   odam.nl          #
+#    Updated: 2021/06/22 16:34:25 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ ifdef DEBUG
 CFLAGS 			+= -g
 endif
 LIBS			=
-HEADERS			= src/libft.h
+HEADERS			= libft.h
 INCLUDES		= $(addprefix -I,$(dir $(HEADERS)))
 
 SOURCES			= src/arr/ft_array.c \
