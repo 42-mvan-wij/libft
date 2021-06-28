@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/22 00:38:16 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/06/22 01:48:47 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/06/28 12:39:05 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_str_filter(char *str, char *remove_set)
 	if (new_str == NULL)
 		return (NULL);
 	i = 0;
-	while (i == 0 || *(str - 1) != '\0')
+	while (i == 0 || *str != '\0')
 	{
 		if (!ft_strchr(remove_set, *str))
 		{
@@ -52,5 +52,6 @@ char	*ft_str_filter(char *str, char *remove_set)
 		}
 		str++;
 	}
+	new_str[i] = '\0';
 	return (new_str);
 }
