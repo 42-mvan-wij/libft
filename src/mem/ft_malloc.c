@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/15 12:55:05 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/05/15 13:08:42 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/05/17 12:43:16 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_malloc(size_t size)
 	if (ptr == NULL)
 	{
 		if (PRINT_MALLOC_FAIL + 0)
-			write(STDOUT_FILENO, "Error: Malloc failed\n", 22);
+			write(STDOUT_FILENO, "Error: Malloc failed\n", 21);
 		exit(EXIT_FAILURE);
 	}
 	return (ptr);

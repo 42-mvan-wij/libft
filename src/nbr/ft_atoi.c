@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:33:52 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 16:42:00 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/05/24 17:54:33 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int				offset;
-	long long int	result;
-	int				is_neg;
+	int		offset;
+	long	result;
+	int		is_neg;
 
 	offset = 0;
 	while (str[offset] != '\0' && ft_isspace(str[offset]))
