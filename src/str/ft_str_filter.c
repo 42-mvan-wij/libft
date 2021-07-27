@@ -6,11 +6,12 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/22 00:38:16 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/06/28 12:39:05 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/07/27 16:27:16 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	count_chars(char *str, char *set)
 {

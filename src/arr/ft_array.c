@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/29 10:36:21 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:07:04 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/07/27 16:26:37 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ft_array.h"
 #include <stddef.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #include <stdio.h>
 
