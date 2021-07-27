@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 18:15:11 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/06/22 13:53:32 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/07/27 14:54:27 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * Search for char `c` in `ptr` with lengh `n` starting from the end
  */
-void	*ft_memchr(const void *const_ptr, int c, size_t n)
+void	*ft_memrchr(const void *const_ptr, int c, size_t n)
 {
 	unsigned char	*ptr;
 

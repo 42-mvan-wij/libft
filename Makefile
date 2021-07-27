@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2021/06/22 16:34:25 by mvan-wij      ########   odam.nl          #
+#    Updated: 2021/07/27 16:06:31 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ src/char/ft_isalnum.c src/char/ft_isalpha.c src/char/ft_isascii.c src/char/ft_is
 \
 src/gnl/get_next_line.c src/gnl/get_next_line_utils.c \
 \
-src/io/ft_putchar_fd.c src/io/ft_putendl_fd.c src/io/ft_putnbr_base.c src/io/ft_putnbr_fd.c src/io/ft_putstr_fd.c \
+src/io/ft_putchar_fd.c src/io/ft_putendl_fd.c src/io/ft_putnbr_base_fd.c src/io/ft_putnbr_fd.c src/io/ft_putstr_fd.c \
 \
 src/lst/ft_lstadd_back.c src/lst/ft_lstadd_front.c src/lst/ft_lstclear.c src/lst/ft_lstdelone.c src/lst/ft_lstinsert.c src/lst/ft_lstiter.c src/lst/ft_lstlast.c src/lst/ft_lstmap.c src/lst/ft_lstnew.c src/lst/ft_lstsize.c \
 \

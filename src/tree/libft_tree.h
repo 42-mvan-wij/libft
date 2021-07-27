@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft_tree.h                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/27 10:45:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:07:28 by mvan-wij      ########   odam.nl         */
+/*   Created: 2021/07/27 14:50:40 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2021/07/27 14:57:10 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LIBFT_TREE_H
+# define LIBFT_TREE_H
 
-# include "src/arr/libft_arr.h"
-# include "src/char/libft_char.h"
-# include "src/gnl/libft_gnl.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
-# include "src/tree/libft_tree.h"
+typedef struct s_tree
+{
+	void			*content;
+	struct s_tree	*left;
+	struct s_tree	*right;
+}	t_tree;
+
+t_tree	*ft_treenew(void *content, t_tree *left, t_tree *right);
 
 #endif

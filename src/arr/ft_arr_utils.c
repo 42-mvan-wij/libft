@@ -6,12 +6,12 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/22 14:08:36 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/06/22 14:23:06 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/07/27 16:07:00 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_array_int.h"
+#include "ft_array.h"
 #include <stddef.h>
 #include <unistd.h>
 

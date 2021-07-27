@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft_char.h                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/27 10:45:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:07:28 by mvan-wij      ########   odam.nl         */
+/*   Created: 2021/07/27 15:01:44 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2021/07/27 15:03:12 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LIBFT_CHAR_H
+# define LIBFT_CHAR_H
 
-# include "src/arr/libft_arr.h"
-# include "src/char/libft_char.h"
-# include "src/gnl/libft_gnl.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
-# include "src/tree/libft_tree.h"
+int	ft_isalnum(int c);
+int	ft_isalpha(int c);
+int	ft_isascii(int c);
+int	ft_iscntrl(int c);
+int	ft_isdigit(int c);
+int	ft_isgraph(int c);
+int	ft_islower(int c);
+int	ft_isprint(int c);
+int	ft_ispunct(int c);
+int	ft_isspace(int c);
+int	ft_isupper(int c);
+int	ft_isxdigit(int c);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
 
 #endif

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft_io.h                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/27 10:45:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:07:28 by mvan-wij      ########   odam.nl         */
+/*   Created: 2021/07/27 14:57:31 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2021/07/27 14:58:59 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LIBFT_IO_H
+# define LIBFT_IO_H
 
-# include "src/arr/libft_arr.h"
-# include "src/char/libft_char.h"
-# include "src/gnl/libft_gnl.h"
-# include "src/io/libft_io.h"
-# include "src/lst/libft_lst.h"
-# include "src/mem/libft_mem.h"
-# include "src/nbr/libft_nbr.h"
-# include "src/str/libft_str.h"
-# include "src/tree/libft_tree.h"
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+int		ft_putnbr_base_fd(long long nbr, char *basechars, int fd);
+int		ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif
