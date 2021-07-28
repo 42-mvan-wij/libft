@@ -6,23 +6,23 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 00:37:09 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/10 17:26:39 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/07/28 13:33:38 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-double	ft_atod(const char *s)
+double	ft_atod(char *str)
 {
-	char	*str;
 	double	int_part;
 	double	float_part;
+	int		is_neg;
 
-	str = (char *)s;
 	while (ft_isspace(*str))
 		str++;
 	int_part = (double)ft_atoi(str);
-	if (*str == '+' || *str == '-')
+	is_neg = (*str == '-');
+	if (*str == '+' || is_neg)
 		str++;
 	while (ft_isdigit(*str))
 		str++;
@@ -35,7 +35,7 @@ double	ft_atod(const char *s)
 		str++;
 		float_part /= 10;
 	}
-	if (int_part < 0)
+	if (is_neg)
 		return (int_part - float_part);
 	return (int_part + float_part);
 }

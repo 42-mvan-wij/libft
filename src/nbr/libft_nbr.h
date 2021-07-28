@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/27 14:51:23 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:08:56 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/07/28 13:33:10 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdint.h>
 
-double	ft_atod(const char *s);
+double	ft_atod(char *s);
 int		ft_atoi(const char *str);
 char	*ft_itoa_base(int64_t nbr, char *basechars);
 char	*ft_itoa_basei(int64_t nbr, uint8_t base, int cap);
