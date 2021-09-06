@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2021/07/27 16:06:31 by mvan-wij      ########   odam.nl          #
+#    Updated: 2021/09/06 14:20:04 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,23 +21,7 @@ LIBS			=
 HEADERS			= libft.h
 INCLUDES		= $(addprefix -I,$(dir $(HEADERS)))
 
-SOURCES			= src/arr/ft_array.c \
-\
-src/char/ft_isalnum.c src/char/ft_isalpha.c src/char/ft_isascii.c src/char/ft_iscntrl.c src/char/ft_isdigit.c src/char/ft_isgraph.c src/char/ft_islower.c src/char/ft_isprint.c src/char/ft_ispunct.c src/char/ft_isspace.c src/char/ft_isupper.c src/char/ft_isxdigit.c src/char/ft_tolower.c src/char/ft_toupper.c \
-\
-src/gnl/get_next_line.c src/gnl/get_next_line_utils.c \
-\
-src/io/ft_putchar_fd.c src/io/ft_putendl_fd.c src/io/ft_putnbr_base_fd.c src/io/ft_putnbr_fd.c src/io/ft_putstr_fd.c \
-\
-src/lst/ft_lstadd_back.c src/lst/ft_lstadd_front.c src/lst/ft_lstclear.c src/lst/ft_lstdelone.c src/lst/ft_lstinsert.c src/lst/ft_lstiter.c src/lst/ft_lstlast.c src/lst/ft_lstmap.c src/lst/ft_lstnew.c src/lst/ft_lstsize.c \
-\
-src/mem/ft_bzero.c src/mem/ft_calloc.c src/mem/ft_malloc.c src/mem/ft_memccpy.c src/mem/ft_memchr.c src/mem/ft_memcmp.c src/mem/ft_memcpy.c src/mem/ft_memmove.c src/mem/ft_memrchr.c src/mem/ft_memset.c \
-\
-src/nbr/ft_atod.c src/nbr/ft_atoi.c src/nbr/ft_itoa_base.c src/nbr/ft_itoa_basei.c src/nbr/ft_itoa.c src/nbr/ft_nbrlen_u.c src/nbr/ft_nbrlen.c src/nbr/ft_utoa_base.c src/nbr/ft_utoa_basei.c src/nbr/ft_utoa.c \
-\
-src/str/ft_split.c src/str/ft_str_filter.c src/str/ft_strchr.c src/str/ft_strdup.c src/str/ft_strjoin.c src/str/ft_strlcat.c src/str/ft_strlcpy.c src/str/ft_strlen.c src/str/ft_strmapi.c src/str/ft_strncmp.c src/str/ft_strnstr.c src/str/ft_strrchr.c src/str/ft_strtolower.c src/str/ft_strtoupper.c src/str/ft_strtrim.c src/str/ft_substr.c \
-\
-src/tree/ft_treenew.c
+include			sources.mk
 
 ifdef BONUS
 	SOURCES		+=
