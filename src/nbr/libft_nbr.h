@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/27 14:51:23 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/28 13:33:10 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/09/06 15:17:21 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,13 @@ uint8_t	ft_nbrlen(int64_t nbr, uint32_t base);
 char	*ft_utoa_base(uint64_t nbr, char *basechars);
 char	*ft_utoa_basei(uint64_t nbr, uint8_t base, int cap);
 char	*ft_utoa(uint64_t nbr);
+/**
+ * @param pos 0 is least significant digit
+ */
+int		ft_get_digit(int num, int pos, int base);
+/**
+ * @param pos 0 is least significant digit
+ */
+int		ft_set_digit(int num, int pos, int new_digit, int base);
 
 #endif

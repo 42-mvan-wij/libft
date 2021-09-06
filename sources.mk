@@ -34,6 +34,7 @@ LST_SRCS =	src/lst/ft_lstadd_back.c	\
 			src/lst/ft_lstmap.c			\
 			src/lst/ft_lstnew.c			\
 			src/lst/ft_lstsize.c		\
+			src/lst/ft_lstitem.c
 
 MEM_SRCS =	src/mem/ft_bzero.c		\
 			src/mem/ft_calloc.c		\
@@ -57,6 +58,8 @@ NBR_SRCS =	src/nbr/ft_atod.c		\
 			src/nbr/ft_utoa_base.c	\
 			src/nbr/ft_utoa_basei.c	\
 			src/nbr/ft_utoa.c		\
+			src/nbr/ft_get_digit.c	\
+			src/nbr/ft_set_digit.c
 
 STR_SRCS =	src/str/ft_split.c		\
 			src/str/ft_str_filter.c	\
