@@ -6,10 +6,11 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2021/09/06 14:20:04 by mvan-wij      ########   odam.nl          #
+#    Updated: 2021/09/22 18:41:08 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
+PROJECT			= libft
 NAME			= libft.a
 
 CC				= gcc
@@ -22,6 +23,9 @@ HEADERS			= libft.h
 INCLUDES		= $(addprefix -I,$(dir $(HEADERS)))
 
 include			sources.mk
+include			colours.mk
+RULE_SPACING = 6
+PROJECT_SPACING = 11
 
 ifdef BONUS
 	SOURCES		+=
@@ -34,28 +38,34 @@ OBJDIR			= obj
 
 OBJECTS			= $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:c=o))
 
-.PHONY: all clean fclean re so bonus debug sources
+.PHONY: all clean fclean re debug sources
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
+ifndef SILENT
+	@printf "$(CYAN_FG)%-$(PROJECT_SPACING)s$(RESET_COLOR) $(GREEN_FG)%-$(RULE_SPACING)s$(RESET_COLOR) : $(CLEAR_REST_OF_LINE)" "[$(PROJECT)]" "make"
 	ar -cr $(NAME) $(OBJECTS)
-
-bonus:
-	$(MAKE) BONUS=1
+else
+	@ar -cr $(NAME) $(OBJECTS)
+	@printf "$(CYAN_FG)%-$(PROJECT_SPACING)s$(RESET_COLOR) $(GREEN_FG)%-$(RULE_SPACING)s$(RESET_COLOR) : $(BLUE_FG)$(NAME)$(RESET_COLOR) created$(CLEAR_REST_OF_LINE)\n" "[$(PROJECT)]" "make"
+endif
 
 debug:
 	$(MAKE) DEBUG=1
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERS)
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@printf "$(CYAN_FG)%-$(PROJECT_SPACING)s$(RESET_COLOR) $(GREEN_FG)%-$(RULE_SPACING)s$(RESET_COLOR) : " "[$(PROJECT)]" "make"
+	@printf "$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@$(CLEAR_REST_OF_LINE)\r"
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS)
+	@printf "$(CYAN_FG)%-$(PROJECT_SPACING)s$(RESET_COLOR) $(GREEN_FG)%-$(RULE_SPACING)s$(RESET_COLOR) : " "[$(PROJECT)]" "$@"
+	rm -rf $(OBJDIR)
 
 fclean: clean
-	rm -rf $(OBJDIR)
+	@printf "$(CYAN_FG)%-$(PROJECT_SPACING)s$(RESET_COLOR) $(GREEN_FG)%-$(RULE_SPACING)s$(RESET_COLOR) : " "[$(PROJECT)]" "$@"
 	rm -f $(NAME)
 
 re: fclean all
