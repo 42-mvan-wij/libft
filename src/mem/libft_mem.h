@@ -26,5 +26,8 @@ void	*ft_memdup(const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memrchr(const void *const_ptr, int c, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_free_arr(void ***arr);
+void	*ft_free_and_nullify(void **ptr);
+void	*ft_free_arr_n(void ***arr, size_t n);
 
 #endif

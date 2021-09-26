@@ -36,17 +36,20 @@ LST_SRCS =	src/lst/ft_lstadd_back.c	\
 			src/lst/ft_lstsize.c		\
 			src/lst/ft_lstitem.c
 
-MEM_SRCS =	src/mem/ft_bzero.c		\
-			src/mem/ft_calloc.c		\
-			src/mem/ft_malloc.c		\
-			src/mem/ft_memccpy.c	\
-			src/mem/ft_memchr.c		\
-			src/mem/ft_memcmp.c		\
-			src/mem/ft_memcpy.c		\
-			src/mem/ft_memdup.c		\
-			src/mem/ft_memmove.c	\
-			src/mem/ft_memrchr.c	\
-			src/mem/ft_memset.c
+MEM_SRCS =	src/mem/ft_bzero.c				\
+			src/mem/ft_calloc.c				\
+			src/mem/ft_malloc.c				\
+			src/mem/ft_memccpy.c			\
+			src/mem/ft_memchr.c				\
+			src/mem/ft_memcmp.c				\
+			src/mem/ft_memcpy.c				\
+			src/mem/ft_memdup.c				\
+			src/mem/ft_memmove.c			\
+			src/mem/ft_memrchr.c			\
+			src/mem/ft_memset.c				\
+			src/mem/ft_free_and_nullify.c	\
+			src/mem/ft_free_arr.c			\
+			src/mem/ft_free_arr_n.c
 
 NBR_SRCS =	src/nbr/ft_atod.c		\
 			src/nbr/ft_atoi.c		\

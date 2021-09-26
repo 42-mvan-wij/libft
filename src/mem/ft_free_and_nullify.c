@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memdup.c                                  :+:    :+:            */
+/*   ft_free_and_nullify.c                              :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
+/*   By: marius <marius@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/25 12:51:32 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/11 23:32:24 by mvan-wij      ########   odam.nl         */
+/*   Created: 2021/09/26 20:38:11 by marius        #+#    #+#                 */
+/*   Updated: 2021/09/26 20:38:11 by marius        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
 
-void	*ft_memdup(const void *src, size_t n)
+void	*ft_free_and_nullify(void **ptr)
 {
-	void	*dst;
-
-	dst = malloc(n);
-	if (dst == NULL)
-		return (NULL);
-	return (ft_memmove(dst, src, n));
+	free(*ptr);
+	*ptr = NULL;
+	return (NULL);
 }
