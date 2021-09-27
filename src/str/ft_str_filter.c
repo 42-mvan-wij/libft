@@ -40,7 +40,7 @@ char	*ft_str_filter(char *str, char *remove_set)
 	if (str == NULL || remove_set == NULL)
 		return (NULL);
 	count = count_chars(str, remove_set);
-	new_str = malloc((ft_strlen(str) - count) * sizeof(char));
+	new_str = malloc((ft_strlen(str) - count + 1) * sizeof(char));
 	if (new_str == NULL)
 		return (NULL);
 	i = 0;
