@@ -15,6 +15,9 @@ NAME			= libft.a
 
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror
+ifndef NO_SANITIZE
+CFLAGS			+= -fsanitize=address
+endif
 ifdef DEBUG
 CFLAGS 			+= -g
 endif
