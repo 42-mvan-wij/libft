@@ -6,10 +6,15 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 15:10:44 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 16:43:39 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 17:14:17 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ *
+ * @param c char
+ * @returns
+ */
 int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);

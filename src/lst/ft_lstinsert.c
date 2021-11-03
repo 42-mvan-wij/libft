@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstinsert_bonus.c                               :+:    :+:            */
+/*   ft_lstinsert.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/29 13:20:54 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 17:05:37 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 17:39:25 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * Inserts @p new into @p lst at index @p i
+ * @param lst
+ * @param new
+ * @param i
+ * @return 0 on failure, 1 on success
+ */
 int	ft_lstinsert(t_list **lst, t_list *new, unsigned int i)
 {
 	t_list	*l;

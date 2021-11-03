@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_utoa_bonus.c                                    :+:    :+:            */
+/*   ft_utoa.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 15:25:07 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/11 13:51:16 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:17:39 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+/**
+ * Converts unsigned @p nbr to a string in base 10
+ * @param nbr
+ * @return NULL on failure
+ */
 char	*ft_utoa(uint64_t nbr)
 {
 	uint8_t	i;

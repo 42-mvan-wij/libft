@@ -6,10 +6,15 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 15:06:46 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 12:00:31 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 17:14:01 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ *
+ * @param c char
+ * @returns
+ */
 int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);

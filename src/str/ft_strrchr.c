@@ -6,13 +6,19 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:58:19 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/08 17:26:17 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:20:47 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * Search for last occurrence of @p c in @p s
+ * @param s
+ * @param c
+ * @return NULL if @p c cannot be found
+ */
 char	*ft_strrchr(const char *s, int c)
 {
 	int		i;

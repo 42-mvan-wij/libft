@@ -6,12 +6,19 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:01:28 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 17:21:15 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:27:56 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+/**
+ * Compares (at most) @p n bytes of memory at @p s1 and @p s2
+ * @param s1
+ * @param s2
+ * @param n
+ * @return 0 if equal, *@p s1 - *@p s2 where a difference has been found
+ */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;

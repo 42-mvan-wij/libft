@@ -6,13 +6,19 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 12:18:41 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:56:39 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:27:22 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * Maps @p s to a new string with @p f called on each character
+ * @param s
+ * @param f
+ * @return NULL on failure
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		len;

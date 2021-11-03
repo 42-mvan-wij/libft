@@ -6,13 +6,19 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:41:25 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:56:26 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:31:21 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * Removes characters in @p set from @p s1 on either side
+ * @param s1
+ * @param set
+ * @return
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int	len;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa_base_bonus.c                               :+:    :+:            */
+/*   ft_itoa_base.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 10:43:04 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/11 13:28:44 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:11:06 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+/**
+ * Converts @p nbr to a string in base: length of @p basechars
+ * , using characters from @p basechars
+ * @param nbr
+ * @param basechars
+ * @return NULL on failure
+ */
 char	*ft_itoa_base(int64_t nbr, char *basechars)
 {
 	size_t	base;

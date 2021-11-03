@@ -6,13 +6,19 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:30:22 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:56:45 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:22:10 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * Concatenates @p s1 and @p s2
+ * @param s1
+ * @param s2
+ * @return NULL on failure
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		len;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa_basei_bonus.c                              :+:    :+:            */
+/*   ft_itoa_basei.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 11:11:59 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/11 13:36:18 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:11:27 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+/**
+ * Converts @p nbr to a string in base: @p base
+ * @param nbr
+ * @param base
+ * @param cap Whether to capitalize to resulting string
+ * @return NULL on failure
+ */
 char	*ft_itoa_basei(int64_t nbr, uint8_t base, int cap)
 {
 	char	*basechars;

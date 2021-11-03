@@ -6,12 +6,18 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 12:39:22 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 17:18:26 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 17:27:19 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Prints @p nbr in a base 10 to @p fd
+ * @param nbr number
+ * @param fd file descriptor
+ * @returns
+ */
 int	ft_putnbr_fd(int n, int fd)
 {
 	int	pow;

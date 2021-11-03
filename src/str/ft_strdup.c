@@ -6,13 +6,18 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:04:32 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:56:48 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:21:30 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * Duplicates @p s with malloc
+ * @param s
+ * @return NULL on failure
+ */
 char	*ft_strdup(const char *s)
 {
 	int		len;

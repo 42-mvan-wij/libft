@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 15:25:07 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/03/11 14:31:50 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:11:48 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+/**
+ * Converts @p nbr to a string in base 10
+ * @param nbr
+ * @return NULL on failure
+ */
 char	*ft_itoa(int64_t nbr)
 {
 	uint8_t	i;

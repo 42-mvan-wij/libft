@@ -6,13 +6,17 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 12:59:50 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 17:05:54 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 17:51:42 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * @param lst
+ * @return
+ */
 int	ft_lstsize(t_list *lst)
 {
 	int	len;

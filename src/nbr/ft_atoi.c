@@ -6,12 +6,17 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 14:33:52 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/05/24 17:54:33 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:06:37 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Converts @p str to an integer
+ * @param str
+ * @return
+ */
 int	ft_atoi(const char *str)
 {
 	int		offset;

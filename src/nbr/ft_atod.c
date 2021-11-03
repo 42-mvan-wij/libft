@@ -6,12 +6,17 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 00:37:09 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/28 13:33:38 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:06:09 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * Converts @p str to a double
+ * @param str
+ * @return
+ */
 double	ft_atod(char *str)
 {
 	double	int_part;

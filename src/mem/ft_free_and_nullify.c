@@ -6,15 +6,23 @@
 /*   By: marius <marius@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/26 20:38:11 by marius        #+#    #+#                 */
-/*   Updated: 2021/09/26 20:38:11 by marius        ########   odam.nl         */
+/*   Updated: 2021/11/03 17:53:58 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_free_and_nullify(void **ptr)
+/**
+ * Frees and nullifies *@p ptr
+ * @param ptr &(void *)ptr
+ * @return NULL
+ */
+void	*ft_free_and_nullify(void *ptr)
 {
-	free(*ptr);
-	*ptr = NULL;
+	void	**p;
+
+	p = (void **)p;
+	free(*p);
+	*p = NULL;
 	return (NULL);
 }

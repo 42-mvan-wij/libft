@@ -6,13 +6,21 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 11:11:05 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2020/11/11 13:56:36 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:29:45 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * Searches for @p little in the first @p len bytes of @p big
+ * @param big
+ * @param little
+ * @param len
+ * @return NULL if @p little cannot be found,
+ * otherwise pointer to first matching character
+ */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	len_little;

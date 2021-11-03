@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/22 00:38:16 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:27:16 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:20:04 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ static int	count_chars(char *str, char *set)
 }
 
 /**
- * Removes a all characters in `remove_set` from `str`
- * Return NULL if either `str` or `remove_set` is NULL
+ * Removes a all characters in @p remove_set from @p str
+ * @param str
+ * @param remove_set
+ * @return NULL if either @p str or @p remove_set is NULL
  */
 char	*ft_str_filter(char *str, char *remove_set)
 {

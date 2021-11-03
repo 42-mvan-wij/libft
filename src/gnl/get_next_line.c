@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/14 16:13:10 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/06/22 13:57:03 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 17:20:49 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,12 @@ int	join(t_buffer **buf, char **line, ssize_t size, int end)
 	return (!end);
 }
 
+/**
+ *
+ * @param fd file descriptor
+ * @param line &(char *)line
+ * @returns -1 on error, 0 on EOF, 1 otherwise
+ */
 int	get_next_line(int fd, char **line)
 {
 	static t_buffer	*buf[FD_SETSIZE];

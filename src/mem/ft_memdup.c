@@ -13,6 +13,12 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * Duplicates @p n bytes of @p src with malloc
+ * @param src
+ * @param n
+ * @return NULL on failure
+ */
 void	*ft_memdup(const void *src, size_t n)
 {
 	void	*dst;

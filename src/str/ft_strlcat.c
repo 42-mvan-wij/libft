@@ -6,13 +6,21 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 18:24:08 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/02/24 17:20:56 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/03 18:24:43 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * Puts @p src at the end of @p dst
+ * , until @p dstsize bytes are filled in @p dst
+ * @param dst
+ * @param src
+ * @param dstsize
+ * @return IDK
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dst_len;
