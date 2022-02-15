@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/27 14:53:00 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:08:43 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/02/15 19:53:30 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	*ft_memdup(const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memrchr(const void *const_ptr, int c, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
-void	*ft_free_arr(void ***arr);
+void	*ft_free_arr(void *arr);
 void	*ft_free_and_nullify(void **ptr);
-void	*ft_free_arr_n(void ***arr, size_t n);
+void	*ft_free_arr_n(void *arr, size_t n);
 
 #endif
