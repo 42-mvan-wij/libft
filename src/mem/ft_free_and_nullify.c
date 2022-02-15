@@ -6,7 +6,7 @@
 /*   By: marius <marius@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/26 20:38:11 by marius        #+#    #+#                 */
-/*   Updated: 2021/11/03 17:53:58 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/02/15 19:49:10 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_free_and_nullify(void *ptr)
 {
 	void	**p;
 
-	p = (void **)p;
+	p = (void **)ptr;
 	free(*p);
 	*p = NULL;
 	return (NULL);
