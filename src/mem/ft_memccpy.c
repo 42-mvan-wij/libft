@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 17:51:10 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/11/03 18:02:36 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/02/15 19:34:51 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,21 @@
  * @param src
  * @param c
  * @param n size to copy
- * @return @p dst
+ * @return pointer to char after @p c in @p dst
+ * or NULL if @p not is not found in @p src
  */
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned int	i;
-	unsigned char	cc;
-	unsigned char	*ucsrc;
-	char			*csrc;
-	char			*cdst;
+	const char	*from = src;
+	char		*to;
+	size_t		i;
 
-	cdst = (char *)dst;
-	csrc = (char *)src;
-	ucsrc = (unsigned char *)src;
-	cc = (unsigned char)c;
+	to = dst;
 	i = 0;
 	while (i < n)
 	{
-		cdst[i] = csrc[i];
-		if (ucsrc[i] == cc)
+		to[i] = from[i];
+		if ((unsigned char)from[i] == (unsigned char)c)
 			return (dst + i + 1);
 		i++;
 	}
