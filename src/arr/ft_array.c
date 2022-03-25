@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/04/29 10:36:21 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:26:37 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/08 18:29:39 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,22 @@ t_voidp_arr	*new_voidp_arr(size_t size)
 	}
 	arr->size = size;
 	arr->length = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	return (arr);
 }
 
@@ -71,6 +87,7 @@ char	*stringify(t_voidp_arr *arr)
 	if (arr->length == 0)
 		return ("[ ]");
 	const int len = 6;
+
 	str = malloc((len + 2) * arr->length + 2);
 	str2 = malloc((len + 2) * arr->length + 2);
 	ft_memcpy(str, "[ ", 3);
@@ -165,7 +182,6 @@ int main(void)
 			ASSERT_UNEQUAL(extend(arr, 12)->content, NULL);
 		}
 	}
-
 	if (1) {
 		t_voidp_arr	*arr;
 

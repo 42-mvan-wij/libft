@@ -6,70 +6,90 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/10/27 13:16:39 by mvan-wij      #+#    #+#                  #
-#    Updated: 2021/09/22 18:41:08 by mvan-wij      ########   odam.nl          #
+#    Updated: 2022/03/25 14:10:56 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT			= libft
-NAME			= libft.a
+################################################################################
 
-CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror
-ifndef NO_SANITIZE
-CFLAGS			+= -fsanitize=address
-endif
-ifdef DEBUG
-CFLAGS 			+= -g
-endif
-LIBS			=
-HEADERS			= libft.h
-INCLUDES		= $(addprefix -I,$(dir $(HEADERS)))
+include utils.mk
+include sources.mk
 
-include			sources.mk
-include			colours.mk
-RULE_SPACING = 6
-PROJECT_SPACING = 11
+################################################################################
+
+PROJECT		:= libft
+NAME		:= libft.a
+NAME_BONUS	:= libft.a
+
+LIBFT		:=
+MINILIBX	:=
+
+CC			:= cc
+CFLAGS		+= -Wall -Wextra -Werror $(if $(DEBUG), -g3) $(if $(SANITIZE), -fsanitize=address -g3)
+
+################################################################################
+
+USER_LIBS +=
+SYSTEM_LIBS +=
+FRAMEWORKS +=
+HEADERS :=		\
+	libft.h
+# SOURCES :=
+
+################################################################################
 
 ifdef BONUS
-	SOURCES		+=
-	CFLAGS		+=
-	LIBS		+=
+NAME	:= $(NAME_BONUS)
+HEADERS +=
+SOURCES	+=
+CFLAGS	+= -DBONUS
 endif
 
-SRCDIR			= src
-OBJDIR			= obj
+################################################################################
 
-OBJECTS			= $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:c=o))
+OBJDIR := obj
+OBJECTS := $(addprefix $(OBJDIR)/, $(SOURCES:c=o))
+INCLUDE_FLAGS += $(addprefix -I, $(sort $(dir $(HEADERS))))
+LIB_FLAGS += $(addprefix -L, $(sort $(dir $(USER_LIBS)))) $(addprefix -l, $(SYSTEM_LIBS) $(patsubst lib%,%,$(basename $(notdir $(USER_LIBS))))) $(addprefix -framework , $(FRAMEWORKS))
 
-.PHONY: all clean fclean re debug sources
+export CFLAGS := $(sort $(CFLAGS))
+export LIB_FLAGS := $(LIB_FLAGS)
 
-all: $(NAME)
+DATA_FILE := .make_data.txt
+MAKE_DATA := $(CFLAGS) $(LIB_FLAGS) $(INCLUDE_FLAGS) $(sort $(OBJECTS))
+ifneq ($(shell echo $(MAKE_DATA)), $(shell cat "$(DATA_FILE)" 2> /dev/null))
+PRE_RULES := clean
+endif
 
-$(NAME): $(OBJECTS)
-ifndef SILENT
-	@printf "$(CYAN_FG)%-$(PROJECT_SPACING)s$(RESET_COLOR) $(GREEN_FG)%-$(RULE_SPACING)s$(RESET_COLOR) : $(CLEAR_REST_OF_LINE)" "[$(PROJECT)]" "make"
+################################################################################
+
+all: $(PRE_RULES) $(NAME)
+
+$(NAME): $(USER_LIBS) $(OBJECTS)
+	@$(call print_prefix,"$(PROJECT)","make")
 	ar -cr $(NAME) $(OBJECTS)
-else
-	@ar -cr $(NAME) $(OBJECTS)
-	@printf "$(CYAN_FG)%-$(PROJECT_SPACING)s$(RESET_COLOR) $(GREEN_FG)%-$(RULE_SPACING)s$(RESET_COLOR) : $(BLUE_FG)$(NAME)$(RESET_COLOR) created$(CLEAR_REST_OF_LINE)\n" "[$(PROJECT)]" "make"
-endif
+	@$(call print_prefix,"$(PROJECT)","make")
+	@printf "$(BLUE_FG)$(NAME)$(RESET_COLOR) created\n"
+
+
+$(OBJDIR)/%.o: %.c $(HEADERS)
+	@mkdir -p $(@D)
+	@$(call print_prefix,"$(PROJECT)","make")
+	@$(call exec_no_nl,$(CC) $(CFLAGS) $(INCLUDE_FLAGS) $(INCLUDES) -c $< -o $@)
+
 
 debug:
-	$(MAKE) DEBUG=1
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERS)
-	@mkdir -p $(@D)
-	@printf "$(CYAN_FG)%-$(PROJECT_SPACING)s$(RESET_COLOR) $(GREEN_FG)%-$(RULE_SPACING)s$(RESET_COLOR) : " "[$(PROJECT)]" "make"
-	@printf "$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@$(CLEAR_REST_OF_LINE)\r"
-	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(MAKE) DEBUG=1
 
 clean:
-	@printf "$(CYAN_FG)%-$(PROJECT_SPACING)s$(RESET_COLOR) $(GREEN_FG)%-$(RULE_SPACING)s$(RESET_COLOR) : " "[$(PROJECT)]" "$@"
+	@$(call print_prefix,"$(PROJECT)","$@")
 	rm -rf $(OBJDIR)
 
 fclean: clean
-	@printf "$(CYAN_FG)%-$(PROJECT_SPACING)s$(RESET_COLOR) $(GREEN_FG)%-$(RULE_SPACING)s$(RESET_COLOR) : " "[$(PROJECT)]" "$@"
+	@$(call print_prefix,"$(PROJECT)","$@")
 	rm -f $(NAME)
+	@$(call print_prefix,"$(PROJECT)","$@")
+	rm -f $(DATA_FILE)
 
 re: fclean all
 
@@ -78,3 +98,6 @@ re: fclean all
 sources:
 	@echo $(SOURCES)
 
+.PHONY: all debug clean fclean re sources
+
+################################################################################

@@ -6,13 +6,13 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/22 14:03:09 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:07:09 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/03/02 12:33:34 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_array.h"
-#include <stddef.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 t_voidp_arr	*extend(t_voidp_arr *arr, size_t new_size)

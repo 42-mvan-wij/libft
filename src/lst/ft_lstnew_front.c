@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putchar_fd.c                                    :+:    :+:            */
+/*   ft_lstnew_front.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/27 12:29:59 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2022/03/25 15:46:27 by mvan-wij      ########   odam.nl         */
+/*   Created: 2021/11/01 11:10:40 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2021/11/02 11:19:54 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-/**
- * Prints @p c to @p fd
- * @param c char
- * @param fd file descriptor
- * @returns
- */
-ssize_t	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstnew_front(void *content, t_list **lst)
 {
-	return (write(fd, &c, 1));
+	t_list	*new;
+
+	new = ft_lstnew(content);
+	if (new != NULL)
+		ft_lstadd_front(lst, new);
+	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/07/27 14:47:15 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:09:13 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/03/25 12:26:30 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 char	**ft_split(char const *str, char c);
 char	*ft_str_filter(char *str, char *remove_set);
 char	*ft_strchr(const char *s, int c);
+int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);

@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 12:32:15 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/11/03 17:28:23 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/03/25 15:49:02 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
  * @param fd file descriptor
  * @returns
  */
-void	ft_putstr_fd(char *s, int fd)
+ssize_t	ft_putstr_fd(char *s, int fd)
 {
-	if (s != NULL)
-		write(fd, s, ft_strlen(s));
+	return (write(fd, s, ft_strlen(s)));
 }

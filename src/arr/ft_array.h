@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/22 14:18:19 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/07/27 16:11:54 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2021/11/08 18:33:10 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 # include "libft_arr.h"
 # include <stddef.h>
 
+//TODO: test
 # define ASSERT(statement) { \
 	if (!(statement)) \
 		printf("Assert: (%s) returned false\n", #statement); \
-}
+	}
+
 # define ASSERT_EQUAL(a, b) { \
 	if (a != b) \
 		printf("Assert: %s != %s\n", #a, #b); \

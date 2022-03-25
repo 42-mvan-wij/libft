@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putchar_fd.c                                    :+:    :+:            */
+/*   ft_lst_to_arr.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/27 12:29:59 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2022/03/25 15:46:27 by mvan-wij      ########   odam.nl         */
+/*   Created: 2022/02/01 13:00:50 by mvan-wij      #+#    #+#                 */
+/*   Updated: 2022/02/23 16:58:59 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+#include <stdlib.h>
 
-/**
- * Prints @p c to @p fd
- * @param c char
- * @param fd file descriptor
- * @returns
- */
-ssize_t	ft_putchar_fd(char c, int fd)
+void	**ft_lst_to_arr(t_list *lst, void *end_indicator)
 {
-	return (write(fd, &c, 1));
+	const size_t	len = ft_lstsize(lst);
+	void			**arr;
+	t_list			*next;
+	size_t			i;
+
+	arr = malloc((len + 1) * sizeof(void *));
+	if (arr == NULL)
+		return (NULL);
+	arr[len] = end_indicator;
+	i = 0;
+	while (lst != NULL)
+	{
+		arr[i] = lst->content;
+		next = lst->next;
+		free(lst);
+		lst = next;
+		i++;
+	}
+	return (arr);
 }

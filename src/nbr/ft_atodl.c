@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atod.c                                          :+:    :+:            */
+/*   ft_atodl.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 00:37:09 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2022/03/25 11:59:03 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/03/25 11:50:33 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Converts @p str to a double
+ * Converts @p str to a long double
  * @param str
  * @return
  */
-double	ft_atod(char *str)
+long double	ft_atodl(char *str)
 {
-	double	int_part;
-	double	float_part;
-	int		is_neg;
+	long double	int_part;
+	long double	float_part;
+	int			is_neg;
 
 	while (ft_isspace(*str))
 		str++;
-	int_part = (double)ft_atoi(str, NULL);
+	int_part = (long double)ft_atoi(str, NULL);
 	is_neg = (*str == '-');
 	if (*str == '+' || is_neg)
 		str++;
@@ -34,11 +34,11 @@ double	ft_atod(char *str)
 	if (*str != '.' || !ft_isdigit(str[1]))
 		return (int_part);
 	str++;
-	float_part = (double)ft_atoi(str, NULL);
+	float_part = (long double)ft_atoi(str, NULL);
 	while (ft_isdigit(*str))
 	{
 		str++;
-		float_part /= (double)10;
+		float_part /= (long double)10;
 	}
 	if (is_neg)
 		return (int_part - float_part);

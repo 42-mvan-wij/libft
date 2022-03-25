@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/28 13:09:51 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/11/03 17:33:25 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/03/25 12:17:50 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  * @param lst &(t_list *)lst
  * @param del NULL, or a function that frees the content of the list contents
  */
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	*ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next;
 
@@ -28,4 +28,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = next;
 	}
+	return (*lst);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putnbr_base_fd.c                                :+:    :+:            */
+/*   ft_putnbr_base_len_fd.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 12:09:02 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2022/03/25 16:01:59 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/03/25 16:02:32 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@
  * , base is defined by the length of @p basechars
  * @param nbr number
  * @param basechars characters to choose from (length defines base)
+ * @param base base to use
  * @param fd file descriptor
  * @returns
  */
-ssize_t	ft_putnbr_base_fd(long long n, char *basechars, int fd)
+ssize_t	ft_putnbr_base_len_fd(long long n, char *basechars, int base, int fd)
 {
-	int		base;
 	ssize_t	count;
 	ssize_t	tmp;
 
-	base = ft_strlen(basechars);
 	count = 0;
 	if (n < 0)
 	{
