@@ -6,18 +6,23 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 12:09:02 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2022/03/25 16:02:32 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/07/21 12:20:55 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
+static bool	accumulate(ssize_t *count, ssize_t add)
+{
+	*count += add;
+	return (add >= 0);
+}
+
 /**
- * Prints @p nbr in a base to @p fd
- * , base is defined by the length of @p basechars
+ * Prints @p nbr in @p base to @p fd
  * @param nbr number
- * @param basechars characters to choose from (length defines base)
+ * @param basechars characters to choose from
  * @param base base to use
  * @param fd file descriptor
  * @returns
@@ -25,26 +30,28 @@
 ssize_t	ft_putnbr_base_len_fd(long long n, char *basechars, int base, int fd)
 {
 	ssize_t	count;
-	ssize_t	tmp;
+	bool	was_ok;
 
 	count = 0;
-	if (n < 0)
+	if (n >= 0)
 	{
-		count = ft_putchar_fd('-', fd);
-		if (count < 0)
-			return (count);
-		tmp = ft_putchar_fd('0' - (n % base), fd);
+		was_ok = true;
+		if (n / base != 0)
+			was_ok = accumulate(&count,
+					ft_putnbr_base_len_fd(n / base, basechars, base, fd));
+		if (was_ok)
+			was_ok = accumulate(&count, ft_putchar_fd(basechars[n % base], fd));
 	}
 	else
-		tmp = ft_putchar_fd('0' + (n % base), fd);
-	if (tmp < 0)
+	{
+		was_ok = accumulate(&count, ft_putchar_fd('-', fd));
+		if (was_ok && n / base != 0)
+			was_ok = accumulate(&count,
+					ft_putnbr_base_len_fd(-(n / base), basechars, base, fd));
+		if (was_ok)
+			was_ok = ft_putchar_fd(basechars[-(n % base)], fd);
+	}
+	if (was_ok)
 		return (count);
-	count += tmp;
-	if (n < 0)
-		tmp = ft_putnbr_base_len_fd(-(n / base), basechars, base, fd);
-	else
-		tmp = ft_putnbr_base_len_fd(n / base, basechars, base, fd);
-	if (tmp < 0)
-		return (tmp);
-	return (count + tmp);
+	return (-1);
 }
