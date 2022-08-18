@@ -6,18 +6,12 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 12:09:02 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2022/07/21 12:14:03 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/08/18 15:33:56 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
-
-static bool	accumulate(ssize_t *count, ssize_t add)
-{
-	*count += add;
-	return (add >= 0);
-}
 
 /**
  * Prints @p nbr in a base to @p fd
