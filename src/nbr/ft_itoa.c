@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 15:25:07 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2021/11/03 18:11:48 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/09/14 11:08:56 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ char	*ft_itoa(int64_t nbr)
 
 	is_neg = nbr < 0;
 	i = ft_nbrlen(nbr, 10);
-	res = ft_calloc(i + 1, sizeof(char));
+	res = malloc((i + 1) * sizeof(char));
+	res[i] = '\0';
 	while (i != is_neg)
 	{
 		i--;

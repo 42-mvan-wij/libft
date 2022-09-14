@@ -85,6 +85,8 @@ NBR_SRCS :=						\
 	src/nbr/ft_atodl.c			\
 	src/nbr/ft_atoi_strict.c	\
 	src/nbr/ft_atoi.c			\
+	src/nbr/ft_atoll_strict.c	\
+	src/nbr/ft_atoll.c			\
 	src/nbr/ft_itoa_base.c		\
 	src/nbr/ft_itoa_basei.c		\
 	src/nbr/ft_itoa.c			\
