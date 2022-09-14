@@ -6,14 +6,9 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/03/25 11:41:29 by mvan-wij      #+#    #+#                  #
-#    Updated: 2022/03/25 12:46:33 by mvan-wij      ########   odam.nl          #
+#    Updated: 2022/09/14 11:07:21 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
-
-ARR_SRCS :=					\
-	src/arr/ft_arr_utils.c	\
-	src/arr/ft_array.c		\
-	src/arr/ft_arrextend.c
 
 CHAR_SRCS :=				\
 	src/char/ft_isalnum.c	\
@@ -120,4 +115,4 @@ STR_SRCS :=					\
 TREE_SRCS :=				\
 	src/tree/ft_treenew.c
 
-SOURCES := $(ARR_SRCS) $(CHAR_SRCS) $(GNL_SRCS) $(IO_SRCS) $(LST_SRCS) $(MEM_SRCS) $(NBR_SRCS) $(STR_SRCS) $(TREE_SRCS)
+SOURCES := $(CHAR_SRCS) $(GNL_SRCS) $(IO_SRCS) $(LST_SRCS) $(MEM_SRCS) $(NBR_SRCS) $(STR_SRCS) $(TREE_SRCS)
