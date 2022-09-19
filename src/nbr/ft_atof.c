@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atod.c                                          :+:    :+:            */
+/*   ft_atof.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 00:37:09 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2022/09/19 14:39:14 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/09/19 14:38:32 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	int_part(char **str, double *res)
+static void	int_part(char **str, float *res)
 {
 	*res = 0;
 	while (ft_isdigit(**str))
@@ -23,9 +23,9 @@ static void	int_part(char **str, double *res)
 	}
 }
 
-static void	float_part(char **str, double *res)
+static void	float_part(char **str, float *res)
 {
-	double	divider;
+	float	divider;
 
 	if (**str != '.')
 		return ;
@@ -34,20 +34,20 @@ static void	float_part(char **str, double *res)
 	while (ft_isdigit(**str))
 	{
 		divider *= 10;
-		*res += ((double)(**str - '0')) / divider;
+		*res += ((float)(**str - '0')) / divider;
 		(*str)++;
 	}
 }
 
 /**
- * Converts @p str to a double
+ * Converts @p str to a float
  * @param str
  * @return
  */
-double	ft_atod(char *str)
+float	ft_atof(char *str)
 {
 	bool	is_neg;
-	double	res;
+	float	res;
 
 	while (ft_isspace(*str))
 		str++;

@@ -6,11 +6,38 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 00:37:09 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2022/03/25 11:50:33 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/09/19 14:36:12 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	int_part(char **str, long double *res)
+{
+	*res = 0;
+	while (ft_isdigit(**str))
+	{
+		*res *= 10;
+		*res += (**str - '0');
+		(*str)++;
+	}
+}
+
+static void	float_part(char **str, long double *res)
+{
+	long double	divider;
+
+	if (**str != '.')
+		return ;
+	(*str)++;
+	divider = 1;
+	while (ft_isdigit(**str))
+	{
+		divider *= 10;
+		*res += ((long double)(**str - '0')) / divider;
+		(*str)++;
+	}
+}
 
 /**
  * Converts @p str to a long double
@@ -19,28 +46,17 @@
  */
 long double	ft_atodl(char *str)
 {
-	long double	int_part;
-	long double	float_part;
-	int			is_neg;
+	bool		is_neg;
+	long double	res;
 
 	while (ft_isspace(*str))
 		str++;
-	int_part = (long double)ft_atoi(str, NULL);
 	is_neg = (*str == '-');
 	if (*str == '+' || is_neg)
 		str++;
-	while (ft_isdigit(*str))
-		str++;
-	if (*str != '.' || !ft_isdigit(str[1]))
-		return (int_part);
-	str++;
-	float_part = (long double)ft_atoi(str, NULL);
-	while (ft_isdigit(*str))
-	{
-		str++;
-		float_part /= (long double)10;
-	}
+	int_part(&str, &res);
+	float_part(&str, &res);
 	if (is_neg)
-		return (int_part - float_part);
-	return (int_part + float_part);
+		return (-res);
+	return (res);
 }

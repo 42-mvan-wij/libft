@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/03/25 11:41:29 by mvan-wij      #+#    #+#                  #
-#    Updated: 2022/09/14 11:07:21 by mvan-wij      ########   odam.nl          #
+#    Updated: 2022/09/19 14:56:37 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,8 @@ NBR_SRCS :=						\
 	src/nbr/ft_atod.c			\
 	src/nbr/ft_atodl_strict.c	\
 	src/nbr/ft_atodl.c			\
+	src/nbr/ft_atof_strict.c	\
+	src/nbr/ft_atof.c			\
 	src/nbr/ft_atoi_strict.c	\
 	src/nbr/ft_atoi.c			\
 	src/nbr/ft_atoll_strict.c	\
