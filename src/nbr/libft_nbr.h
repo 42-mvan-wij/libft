@@ -21,7 +21,7 @@ double		ft_atod(char *str);
 bool		ft_atodl_strict(char *str, long double *result_ptr);
 long double	ft_atodl(char *str);
 bool		ft_atof_strict(char *str, long double *result_ptr);
-long double	ft_atof(char *str);
+float		ft_atof(char *str);
 bool		ft_atoi_strict(char *str, int *result_ptr, bool *had_overflow);
 int			ft_atoi(const char *str, bool *had_overflow);
 bool		ft_atoll_strict(char *str, long long *result_p, bool *had_overflow);
